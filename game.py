@@ -257,9 +257,9 @@ if vybor==2:
                                     print('Выбирите чем ходить 1-2')
                                     vod2=int(input())
                                     if vod2==1:
-                                        kletka=(int(kletka)+int(tort))
+                                        kletka5=(int(kletka5)+int(tort))
                                     else:
-                                        kletka2=(int(kletka2)+int(tort))
+                                        kletka6=(int(kletka6)+int(tort))
                                 else:
                                     print('OK')
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
