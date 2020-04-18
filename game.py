@@ -41,7 +41,7 @@ if vybor==2:
             city_list = ['1','2','3','4','5','6']
             dostyp=str(input( ))
             if dostyp=='F':
-                tort=(random.choice(city_list))
+                tort=(random.choice(city_list))                
                 print(name1,'Кубик кинут - ', tort)
                 #figura11=1
                 #figura11+=3
