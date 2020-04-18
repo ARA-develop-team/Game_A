@@ -21,6 +21,7 @@ kletka6=0
 game1=True
 game=True
 game2=True
+game3=True
 vybor=int(input())
 if vybor==2:
     print('Ваше имя игрок 1?')
@@ -156,6 +157,7 @@ if vybor==2:
                         if dostyp=='F':
                             tort=(random.choice(city_list))
                             print(name2,'Кубик кинут - ', tort)
+                            #tort=('6')###### 
                             if tort=='6':
                                 print('Хотите ли вы вывести фигуру?(YES-NO)')
                                 vyvod=str(input( ))
@@ -181,40 +183,56 @@ if vybor==2:
                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                 print('Фигура 1- ', figura55 )
                                 print('Фигура 2- ', figura66 )
-                                print(name2,'Кидайте кубик')
-                                dostyp=str(input( ))
-                                if dostyp=='F':
-                                    tort=(random.choice(city_list))
-                                    print(name2,'Кубик кинут - ', tort)
-                                    if tort=='6' and kletka5==figura5:
-                                        print('Выбирите чем вы хотите походить 1-2')#BAG
-                                        vod=int(input())
-                                        if vod==1:
-                                             kletka5=(int(kletka5)+int(tort))
-                                        else:       
-                                             kletka6=(int(kletka6)+int(tort))
-                                        print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
-                                        print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
-                                        print('Фигура 1- ', figura55 )
-                                        print('Фигура 2- ', figura66 )
-                                    elif tort=='6':
-                                        print('Хотите ли вы вывести фигуру?(YES-NO)')#BAG
-                                        vyvod=str(input( ))
-                                        if vyvod=='YES':
-                                            print('Выберете какую 1-2')
+                                while game3:
+                                    print(name2,'Кидайте кубик')
+                                    dostyp=str(input( ))
+                                    if dostyp=='F':
+                                        tort=(random.choice(city_list))
+                                        print(name2,'Кубик кинут - ', tort)
+                                        #tort=('6')#########
+                                        if tort=='6' and kletka5==figura5:
+                                            print('Выбирите чем вы хотите походить 1-2')
                                             vod=int(input())
                                             if vod==1:
-                                                figura55=1
-                                                kletka5+=4
-                                            elif vod==2:
-                                                figura66=1
-                                                kletka6+=4
-                                            else:
-                                                print('error')
+                                                 kletka5=(int(kletka5)+int(tort))
+                                            else:       
+                                                 kletka6=(int(kletka6)+int(tort))
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
-                                            print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
+                                            print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Фигура 1- ', figura55 )
-                                            print('Фигура 2- ', figura66 )        
+                                            print('Фигура 2- ', figura66 )
+                                            #break
+                                        elif tort=='6':
+                                            print('Хотите ли вы вывести фигуру?(YES-NO)')
+                                            vyvod=str(input( ))
+                                            if vyvod=='YES':
+                                                print('Выберете какую 1-2')
+                                                vod=int(input())
+                                                if vod==1:
+                                                    figura55=1
+                                                    kletka5+=4
+                                                elif vod==2:
+                                                    figura66=1
+                                                    kletka6+=4
+                                                else:
+                                                    print('error')
+                                                print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
+                                                print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
+                                                print('Фигура 1- ', figura55 )
+                                                print('Фигура 2- ', figura66 )        
+                                            else:
+                                                print('Выбирите чем ходить 1-2')
+                                                vod2=int(input())
+                                                if vod==1:
+                                                    kletka5=(int(kletka5)+int(tort))
+                                                else:
+                                                    kletka6=(int(kletka6)+int(tort))
+                                                print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
+                                                print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
+                                                print('Фигура 1- ', figura55 )
+                                                print('Фигура 2- ', figura66 )
+                                                break
+
                                         else:
                                             print('Выбирите чем ходить 1-2')
                                             vod2=int(input())
@@ -226,22 +244,12 @@ if vybor==2:
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Фигура 1- ', figura55 )
                                             print('Фигура 2- ', figura66 )
-
-                                    else:
-                                        print('Выбирите чем ходить 1-2')
-                                        vod2=int(input())
-                                        if vod==1:
-                                            kletka5=(int(kletka5)+int(tort))
-                                        else:
-                                            kletka6=(int(kletka6)+int(tort))
-                                        print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
-                                        print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
-                                        print('Фигура 1- ', figura55 )
-                                        print('Фигура 2- ', figura66 )
-                                        print('Ход слд. игрока', name1)
-                                        print(name1,'Кидайте кубик')
-                                        break
-                                        #game=False
+                                            print('Ход слд. игрока', name1)
+                                            print(name1,'Кидайте кубик')
+                                            tort=(random.choice(city_list))
+                                            print(name1,'Кубик кинут - ', tort)
+                                            break
+                                            #game=False
                             else:
                                 print(name2,'у вас есть фигура YES-NO')
                                 top=str(input())
@@ -259,6 +267,9 @@ if vybor==2:
                                 print('Фигура 1- ', figura55 )
                                 print('Фигура 2- ', figura66 )
                                 print('Ход слд. игрока', name1)
+                                print(name1,'Кидайте кубик')
+                                #tort=(random.choice(city_list))
+                                #print(name1,'Кубик кинут - ', tort)
                                 break
                                 #game=False
                     #else:
