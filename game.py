@@ -1,7 +1,7 @@
 print('Игра Муха(Мини-Нарды)')
 print('Выбирите количество игроков 2-4')
-end1=28
-end2=35
+end1=27
+end2=7
 #Game1
 figura1=1
 figura11=0
@@ -9,7 +9,7 @@ figura2=1
 figura22=0
 figura33=0
 figura44=0
-suma=1
+suma=0
 kletka=0
 kletka2=0
 kletka3=0
@@ -21,7 +21,7 @@ figura6=4
 figura66=0
 figura77=0
 figura88=0
-suma2=1
+suma2=0
 kletka5=0
 kletka6=0
 kletka7=0
@@ -38,11 +38,11 @@ if vybor==2:
     name2= str(input( ))
     print(name1,'Кидайте кубик')
     while game2:
-        if kletka>=end1 or kletka2>=end1:
-            print('Game1 Win')
+        if kletka>=end1 and kletka2>=end1 and kleyka3>=end1 and kletka4>=end1 and suma==4:
+            print(game1 ,'Win')
             game2=False
-        elif kletka5>=end2 or kletka6>=end2:
-            print('Game2 Win')
+        elif kletka5>=end2 and kletka6>=end2 and kletka7>=end2 and kletka8>=end2 and suma2==4:
+            print(game2 ,' Win')
             game2=False 
         else:
             import random
@@ -52,10 +52,6 @@ if vybor==2:
             if dostyp=='F':
                 tort=(random.choice(city_list))
                 print(name1,'Кубик кинут - ', tort)
-                #figura11=1
-                #figura11+=3
-                #figura11-=2
-                #figura11-=1
                 game1=True
                 while game:
                     if tort=='6':
@@ -67,15 +63,19 @@ if vybor==2:
                             if vod==1:
                                 figura11=1
                                 kletka+=1
+                                suma+=1
                             elif vod==2:
                                 figura22=1
                                 kletka2+=1
+                                suma+=1
                             elif vod==3:
                                 figura33=1
                                 kletka3+=1
+                                suma+=1
                             elif vod==4:
                                 figura44=1
                                 kletka4+=1
+                                suma+=1
                             else:
                                 print('error')
                         else:
@@ -131,15 +131,19 @@ if vybor==2:
                                         if vod==1:
                                             figura11=1
                                             kletka+=1
+                                            suma+=1
                                         elif vod==2:
                                             figura22=1
                                             kletka2+=1
+                                            suma+=1
                                         elif vod==3:
                                             figura33=1
                                             kletka3+=1
+                                            suma+=1
                                         elif vod==4:
                                             figura44=1
                                             kletka4+=1
+                                            suma+=1
                                         else:
                                             print('error')
                                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
@@ -231,12 +235,19 @@ if vybor==2:
                                     if vod==1:
                                         figura55=1
                                         kletka5+=8
+                                        suma2+=1
                                     elif vod==2:
                                         figura66=1
                                         kletka6+=8
+                                        suma2+=1
                                     elif vod==3:
                                         figura77=1
                                         kletka7+=8
+                                        suma2+=1
+                                    elif vod==4:
+                                        figura88=1
+                                        kletka8+=8
+                                        suma2+=1
                                     else:
                                         print('error')
                                 else:
@@ -271,11 +282,11 @@ if vybor==2:
                                             if vod2==1:
                                                  kletka5=(int(kletka5)+int(tort))
                                             elif vod2==2:
-                                                 kletka5=(int(kletka5)+int(tort))
-                                            elif vod2==3:
-                                                 kletka5=(int(kletka5)+int(tort)) 
-                                            else:       
                                                  kletka6=(int(kletka6)+int(tort))
+                                            elif vod2==3:
+                                                 kletka7=(int(kletka7)+int(tort)) 
+                                            else:       
+                                                 kletka8=(int(kletka8)+int(tort))
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -294,15 +305,19 @@ if vybor==2:
                                                 if vod==1:
                                                     figura55=1
                                                     kletka5+=8
+                                                    suma2+=1
                                                 elif vod==2:
                                                     figura66=1
                                                     kletka6+=8
+                                                    suma2+=1
                                                 elif vod==3:
                                                     figura77=1
                                                     kletka7+=8
+                                                    suma2+=1
                                                 elif vod==4:
                                                     figura88=1
-                                                    kletka8+=8 
+                                                    kletka8+=8
+                                                    suma2+=1
                                                 else:
                                                     print('error')
                                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
