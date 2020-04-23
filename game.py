@@ -1,6 +1,45 @@
 print('Игра Муха(Мини-Нарды)')
 print('Выбирите количество игроков 2-4')
-end1=27
+def proVerka(kletka5):
+    if kletka5>28:
+        kletka5-=28
+        return kletka5
+    elif kletka5<28:
+        kletka5=kletka5
+        return kletka5
+    else:
+        print('gtg')
+
+def proVerka2(kletka6):
+    if kletka6>28:
+        kletka6-=28
+        return kletka6
+    elif kletka6<28:
+        kletka6=kletka6
+        return kletka6
+    else:
+        print('gtg')
+
+def proVerka3(kletka7):
+    if kletka7>28:
+        kletka7-=28
+        return kletka7
+    elif kletka7<28:
+        kletka7=kletka7
+        return kletka7
+    else:
+        print('gtg')
+
+def proVerka4(kletka8):
+    if kletka8>28:
+        kletka8-=28
+        return kletka8
+    elif kletka8<28:
+        kletka8=kletka8
+        return kletka8
+    else:
+        print('gtg')        
+end1=28
 end2=7
 #Game1
 figura1=1
@@ -15,9 +54,9 @@ kletka2=0
 kletka3=0
 kletka4=0
 #Game2
-figura5=4
+figura5=8
 figura55=0
-figura6=4
+figura6=8
 figura66=0
 figura77=0
 figura88=0
@@ -210,7 +249,7 @@ if vybor==2:
                             else:
                                 kletka4=(int(kletka4)+int(tort))
                         else:
-                            print('OK')
+                            print('OK')    
                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                         print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                         print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -255,12 +294,16 @@ if vybor==2:
                                     vod2=int(input())
                                     if vod2==1:
                                         kletka5=(int(kletka5)+int(tort))
+                                        kletka5=(proVerka(kletka5))
                                     elif vod2==2:
                                         kletka6=(int(kletka6)+int(tort))
+                                        kletka6=(proVerka(kletka6))
                                     elif vod2==3:
-                                        kletka7=(int(kletka7)+int(tort)) 
+                                        kletka7=(int(kletka7)+int(tort))
+                                        kletka7=(proVerka(kletka7))
                                     else:
                                         kletka8=(int(kletka8)+int(tort))
+                                        kletka8=(proVerka(kletka8))      
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -281,12 +324,16 @@ if vybor==2:
                                             vod2=int(input())
                                             if vod2==1:
                                                  kletka5=(int(kletka5)+int(tort))
+                                                 kletka5=(proVerka(kletka5))
                                             elif vod2==2:
                                                  kletka6=(int(kletka6)+int(tort))
+                                                 kletka6=(proVerka(kletka6))
                                             elif vod2==3:
-                                                 kletka7=(int(kletka7)+int(tort)) 
+                                                 kletka7=(int(kletka7)+int(tort))
+                                                 kletka7=(proVerka(kletka7))
                                             else:       
                                                  kletka8=(int(kletka8)+int(tort))
+                                                 kletka8=(proVerka(kletka8))
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -333,12 +380,16 @@ if vybor==2:
                                                 vod2=int(input())
                                                 if vod2==1:
                                                     kletka5=(int(kletka5)+int(tort))
+                                                    kletka5=(proVerka(kletka5))
                                                 elif vod2==2:
                                                     kletka6=(int(kletka6)+int(tort))
+                                                    kletka6=(proVerka(kletka6))
                                                 elif vod2==3:
                                                     kletka7=(int(kletka7)+int(tort))
+                                                    kletka7=(proVerka(kletka7))
                                                 else:
                                                     kletka8=(int(kletka8)+int(tort))
+                                                    kletka8=(proVerka(kletka8))  
                                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -354,12 +405,16 @@ if vybor==2:
                                             vod2=int(input())
                                             if vod2==1:
                                                 kletka5=(int(kletka5)+int(tort))
+                                                kletka5=(proVerka(kletka5))
                                             elif vod2==2:
                                                 kletka6=(int(kletka6)+int(tort))
+                                                kletka6=(proVerka(kletka6))
                                             elif vod2==3:
-                                                kletka7=(int(kletka7)+int(tort)) 
+                                                kletka7=(int(kletka7)+int(tort))
+                                                kletka7=(proVerka(kletka7))
                                             else:
                                                 kletka8=(int(kletka8)+int(tort))
+                                                kletka8=(proVerka(kletka8))
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -382,14 +437,18 @@ if vybor==2:
                                     vod2=int(input())
                                     if vod2==1:
                                         kletka5=(int(kletka5)+int(tort))
+                                        kletka5=(proVerka(kletka5))
                                     elif vod2==2:
                                         kletka6=(int(kletka6)+int(tort))
+                                        kletka6=(proVerka(kletka6))
                                     elif vod2==3:
                                         kletka7=(int(kletka7)+int(tort))
+                                        kletka7=(proVerka(kletka7))
                                     else:
                                         kletka8=(int(kletka8)+int(tort))
+                                        kletka8=(proVerka(kletka8))
                                 else:
-                                    print('OK')
+                                    print('OK')  
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -426,5 +485,3 @@ else:
 
 #city_list = [1, 2, 3, 4, 5, 6]
 #print("Выбор случайного города из списка - ", random.choice(city_list))
-
-
