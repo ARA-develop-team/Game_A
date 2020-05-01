@@ -10,35 +10,15 @@ def proVerka(kletka5):
     else:
         print('gtg')
 
-def proVerka2(kletka6):
-    if kletka6>28:
-        kletka6-=28
-        return kletka6
-    elif kletka6<28:
-        kletka6=kletka6
-        return kletka6
-    else:
-        print('gtg')
-
-def proVerka3(kletka7):
-    if kletka7>28:
-        kletka7-=28
-        return kletka7
-    elif kletka7<28:
-        kletka7=kletka7
-        return kletka7
-    else:
-        print('gtg')
-
-def proVerka4(kletka8):
-    if kletka8>28:
-        kletka8-=28
-        return kletka8
-    elif kletka8<28:
-        kletka8=kletka8
-        return kletka8
-    else:
-        print('gtg')        
+#def proVerka2(kletka):заморожен
+    #if kletka>28:
+        #figura11+=1
+        #return kletka
+    #elif kletka<28:
+       #kletka=kletka
+        #return kletka
+    #else:
+        #print('gtg')        
 end1=28
 end2=7
 #Game1
@@ -122,12 +102,60 @@ if vybor==2:
                             vod2=int(input())
                             if vod2==1:
                                 kletka=(int(kletka)+int(tort))
+                                if kletka==kletka5:
+                                    figura55-=1
+                                    kletka55=0
+                                elif kletka==kletka6:
+                                    figura66-=1
+                                    kletka66=0
+                                elif kletka==kletka7:
+                                    figura77-=1
+                                    kletka77=0
+                                elif kletka==kletka8:
+                                    figura88-=1
+                                    kletka88=0
                             elif vod2==2:
                                 kletka2=(int(kletka2)+int(tort))
+                                if kletka2==kletka5:
+                                    figura55-=1
+                                    kletka55=0
+                                elif kletka2==kletka6:
+                                    figura66-=1
+                                    kletka66=0
+                                elif kletka2==kletka7:
+                                    figura77-=1
+                                    kletka77=0
+                                elif kletka2==kletka8:
+                                    figura88-=1
+                                    kletka88=0
                             elif vod2==3:
                                 kletka3=(int(kletka3)+int(tort))
+                                if kletka3==kletka5:
+                                    figura55-=1
+                                    kletka55=0
+                                elif kletka3==kletka6:
+                                    figura66-=1
+                                    kletka66=0
+                                elif kletka3==kletka7:
+                                    figura77-=1
+                                    kletka77=0
+                                elif kletka3==kletka8:
+                                    figura88-=1
+                                    kletka88=0
                             else:
                                 kletka4=(int(kletka4)+int(tort))
+                                if kletka4==kletka5:
+                                    figura55-=1
+                                    kletka55=0
+                                elif kletka4==kletka6:
+                                    figura66-=1
+                                    kletka66=0
+                                elif kletka4==kletka7:
+                                    figura77-=1
+                                    kletka77=0
+                                elif kletka4==kletka8:
+                                    figura88-=1
+                                    kletka88=0
                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                         print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                         print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -147,12 +175,45 @@ if vybor==2:
                                     vod=int(input())
                                     if vod==1:
                                         kletka=(int(kletka)+int(tort))
+                                        if kletka==kletka5:
+                                            figura55-=1
+                                        elif kletka==kletka6:
+                                            figura66-=1
+                                        elif kletka==kletka7:
+                                            figura77-=1
+                                        elif kletka==kletka8:
+                                            figura88-=1
                                     elif vod==2:
                                         kletka2=(int(kletka2)+int(tort))
+                                        if kletka2==kletka5:
+                                            figura55-=1
+                                        elif kletka2==kletka6:
+                                            figura66-=1
+                                        elif kletka2==kletka7:
+                                            figura77-=1
+                                        elif kletka2==kletka8:
+                                            figura88-=1
                                     elif vod==3:
                                         kletka3=(int(kletka3)+int(tort))
+                                        if kletka3==kletka5:
+                                            figura55-=1
+                                        elif kletka3==kletka6:
+                                            figura66-=1
+                                        elif kletka3==kletka7:
+                                            figura77-=1
+                                        elif kletka3==kletka8:
+                                            figura88-=1
+                                            
                                     else:       
                                         kletka4=(int(kletka4)+int(tort))
+                                        if kletka4==kletka5:
+                                            figura55-=1
+                                        elif kletka4==kletka6:
+                                            figura66-=1
+                                        elif kletka4==kletka7:
+                                            figura77-=1
+                                        elif kletka4==kletka8:
+                                            figura88-=1
                                     print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                                     print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                                     print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -198,12 +259,44 @@ if vybor==2:
                                         vod2=int(input())
                                         if vod2==1:
                                             kletka=(int(kletka)+int(tort))
+                                            if kletka==kletka5:
+                                                figura55-=1
+                                            elif kletka==kletka6:
+                                                figura66-=1
+                                            elif kletka==kletka7:
+                                                figura77-=1
+                                            elif kletka==kletka8:
+                                                figura88-=1
                                         elif vod2==2:
                                             kletka2=(int(kletka2)+int(tort))
+                                            if kletka2==kletka5:
+                                                figura55-=1
+                                            elif kletka2==kletka6:
+                                                figura66-=1
+                                            elif kletka2==kletka7:
+                                                figura77-=1
+                                            elif kletka2==kletka8:
+                                                figura88-=1
                                         elif vod2==3:
                                             kletka3=(int(kletka3)+int(tort))
+                                            if kletka3==kletka5:
+                                                figura55-=1
+                                            elif kletka3==kletka6:
+                                                figura66-=1
+                                            elif kletka3==kletka7:
+                                                figura77-=1
+                                            elif kletka3==kletka8:
+                                                figura88-=1
                                         else:
                                             kletka4=(int(kletka4)+int(tort))
+                                            if kletka4==kletka5:
+                                                figura55-=1
+                                            elif kletka4==kletka6:
+                                                figura66-=1
+                                            elif kletka4==kletka7:
+                                                figura77-=1
+                                            elif kletka4==kletka8:
+                                                figura88-=1
                                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                                         print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                                         print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -217,12 +310,44 @@ if vybor==2:
                                     vod2=int(input())
                                     if vod2==1:
                                         kletka=(int(kletka)+int(tort))
+                                        if kletka==kletka5:
+                                            figura55-=1
+                                        elif kletka==kletka6:
+                                            figura66-=1
+                                        elif kletka==kletka7:
+                                            figura77-=1
+                                        elif kletka==kletka8:
+                                            figura88-=1
                                     elif vod2==2:
                                         kletka2=(int(kletka2)+int(tort))
+                                        if kletka2==kletka5:
+                                            figura55-=1
+                                        elif kletka2==kletka6:
+                                            figura66-=1
+                                        elif kletka2==kletka7:
+                                            figura77-=1
+                                        elif kletka2==kletka8:
+                                            figura88-=1
                                     elif vod2==3:
                                         kletka3=(int(kletka3)+int(tort))
+                                        if kletka3==kletka5:
+                                            figura55-=1
+                                        elif kletka3==kletka6:
+                                            figura66-=1
+                                        elif kletka3==kletka7:
+                                            figura77-=1
+                                        elif kletka3==kletka8:
+                                            figura88-=1
                                     else:
                                         kletka4=(int(kletka4)+int(tort))
+                                        if kletka4==kletka5:
+                                            figura55-=1
+                                        elif kletka4==kletka6:
+                                            figura66-=1
+                                        elif kletka4==kletka7:
+                                            figura77-=1
+                                        elif kletka4==kletka8:
+                                            figura88-=1
                                     print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                                     print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                                     print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -242,12 +367,44 @@ if vybor==2:
                             vod2=int(input())
                             if vod2==1:
                                 kletka=(int(kletka)+int(tort))
+                                if kletka==kletka5:
+                                    figura55-=1
+                                elif kletka==kletka6:
+                                    figura66-=1
+                                elif kletka==kletka7:
+                                    figura77-=1
+                                elif kletka==kletka8:
+                                    figura88-=1
                             elif vod2==2:
                                 kletka2=(int(kletka2)+int(tort))
+                                if kletka2==kletka5:
+                                    figura55-=1
+                                elif kletka2==kletka6:
+                                    figura66-=1
+                                elif kletka2==kletka7:
+                                    figura77-=1
+                                elif kletka2==kletka8:
+                                    figura88-=1
                             elif vod2==3:
-                                kletka3=(int(kletka3)+int(tort)) 
+                                kletka3=(int(kletka3)+int(tort))
+                                if kletka3==kletka5:
+                                    figura55-=1
+                                elif kletka3==kletka6:
+                                    figura66-=1
+                                elif kletka3==kletka7:
+                                    figura77-=1
+                                elif kletka3==kletka8:
+                                    figura88-=1
                             else:
                                 kletka4=(int(kletka4)+int(tort))
+                                if kletka4==kletka5:
+                                    figura55-=1
+                                elif kletka4==kletka6:
+                                    figura66-=1
+                                elif kletka4==kletka7:
+                                    figura77-=1
+                                elif kletka4==kletka8:
+                                    figura88-=1
                         else:
                             print('OK')    
                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
@@ -295,15 +452,47 @@ if vybor==2:
                                     if vod2==1:
                                         kletka5=(int(kletka5)+int(tort))
                                         kletka5=(proVerka(kletka5))
+                                        if kletka5==kletka:
+                                            figura11-=1
+                                        elif kletka5==kletka2:
+                                            figura22-=1
+                                        elif kletka5==kletka3:
+                                            figura33-=1
+                                        elif kletka5==kletka4:
+                                            figura44-=1
                                     elif vod2==2:
                                         kletka6=(int(kletka6)+int(tort))
                                         kletka6=(proVerka(kletka6))
+                                        if kletka6==kletka:
+                                            figura11-=1
+                                        elif kletka6==kletka2:
+                                            figura22-=1
+                                        elif kletka6==kletka3:
+                                            figura33-=1
+                                        elif kletka6==kletka4:
+                                            figura44-=1 
                                     elif vod2==3:
                                         kletka7=(int(kletka7)+int(tort))
                                         kletka7=(proVerka(kletka7))
+                                        if kletka7==kletka:
+                                            figura11-=1
+                                        elif kletka7==kletka2:
+                                            figura22-=1
+                                        elif kletka7==kletka3:
+                                            figura33-=1
+                                        elif kletka7==kletka4:
+                                            figura44-=1 
                                     else:
                                         kletka8=(int(kletka8)+int(tort))
-                                        kletka8=(proVerka(kletka8))      
+                                        kletka8=(proVerka(kletka8))
+                                        if kletka8==kletka:
+                                            figura11-=1
+                                        elif kletka8==kletka2:
+                                            figura22-=1
+                                        elif kletka8==kletka3:
+                                            figura33-=1
+                                        elif kletka8==kletka4:
+                                            figura44-=1 
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -325,15 +514,47 @@ if vybor==2:
                                             if vod2==1:
                                                  kletka5=(int(kletka5)+int(tort))
                                                  kletka5=(proVerka(kletka5))
+                                                 if kletka5==kletka:
+                                                     figura11-=1
+                                                 elif kletka5==kletka2:
+                                                     figura22-=1
+                                                 elif kletka5==kletka3:
+                                                     figura33-=1
+                                                 elif kletka5==kletka4:
+                                                     figura44-=1 
                                             elif vod2==2:
                                                  kletka6=(int(kletka6)+int(tort))
                                                  kletka6=(proVerka(kletka6))
+                                                 if kletka6==kletka:
+                                                     figura11-=1
+                                                 elif kletka6==kletka2:
+                                                     figura22-=1
+                                                 elif kletka6==kletka3:
+                                                     figura33-=1
+                                                 elif kletka6==kletka4:
+                                                     figura44-=1
                                             elif vod2==3:
                                                  kletka7=(int(kletka7)+int(tort))
                                                  kletka7=(proVerka(kletka7))
+                                                 if kletka7==kletka:
+                                                     figura11-=1
+                                                 elif kletka7==kletka2:
+                                                     figura22-=1
+                                                 elif kletka7==kletka3:
+                                                     figura33-=1
+                                                 elif kletka7==kletka4:
+                                                     figura44-=1 
                                             else:       
                                                  kletka8=(int(kletka8)+int(tort))
                                                  kletka8=(proVerka(kletka8))
+                                                 if kletka8==kletka:
+                                                     figura11-=1
+                                                 elif kletka8==kletka2:
+                                                     figura22-=1
+                                                 elif kletka8==kletka3:
+                                                     figura33-=1
+                                                 elif kletka8==kletka4:
+                                                     figura44-=1
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -381,15 +602,47 @@ if vybor==2:
                                                 if vod2==1:
                                                     kletka5=(int(kletka5)+int(tort))
                                                     kletka5=(proVerka(kletka5))
+                                                    if kletka5==kletka:
+                                                        figura11-=1
+                                                    elif kletka5==kletka2:
+                                                        figura22-=1
+                                                    elif kletka5==kletka3:
+                                                        figura33-=1
+                                                    elif kletka5==kletka4:
+                                                        figura44-=1 
                                                 elif vod2==2:
                                                     kletka6=(int(kletka6)+int(tort))
                                                     kletka6=(proVerka(kletka6))
+                                                    if kletka6==kletka:
+                                                        figura11-=1
+                                                    elif kletka6==kletka2:
+                                                        figura22-=1
+                                                    elif kletka6==kletka3:
+                                                        figura33-=1
+                                                    elif kletka6==kletka4:
+                                                        figura44-=1 
                                                 elif vod2==3:
                                                     kletka7=(int(kletka7)+int(tort))
                                                     kletka7=(proVerka(kletka7))
+                                                    if kletka7==kletka:
+                                                        figura11-=1
+                                                    elif kletka7==kletka2:
+                                                        figura22-=1
+                                                    elif kletka7==kletka3:
+                                                        figura33-=1
+                                                    elif kletka7==kletka4:
+                                                        figura44-=1
                                                 else:
                                                     kletka8=(int(kletka8)+int(tort))
-                                                    kletka8=(proVerka(kletka8))  
+                                                    kletka8=(proVerka(kletka8))
+                                                    if kletka8==kletka:
+                                                        figura11-=1
+                                                    elif kletka8==kletka2:
+                                                        figura22-=1
+                                                    elif kletka8==kletka3:
+                                                        figura33-=1
+                                                    elif kletka8==kletka4:
+                                                        figura44-=1 
                                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -406,15 +659,47 @@ if vybor==2:
                                             if vod2==1:
                                                 kletka5=(int(kletka5)+int(tort))
                                                 kletka5=(proVerka(kletka5))
+                                                if kletka5==kletka:
+                                                    figura11-=1
+                                                elif kletka5==kletka2:
+                                                    figura22-=1
+                                                elif kletka5==kletka3:
+                                                    figura33-=1
+                                                elif kletka5==kletka4:
+                                                    figura44-=1
                                             elif vod2==2:
                                                 kletka6=(int(kletka6)+int(tort))
                                                 kletka6=(proVerka(kletka6))
+                                                if kletka6==kletka:
+                                                    figura11-=1
+                                                elif kletka6==kletka2:
+                                                    figura22-=1
+                                                elif kletka6==kletka3:
+                                                    figura33-=1
+                                                elif kletka6==kletka4:
+                                                    figura44-=1 
                                             elif vod2==3:
                                                 kletka7=(int(kletka7)+int(tort))
                                                 kletka7=(proVerka(kletka7))
+                                                if kletka7==kletka:
+                                                    figura11-=1
+                                                elif kletka7==kletka2:
+                                                    figura22-=1
+                                                elif kletka7==kletka3:
+                                                    figura33-=1
+                                                elif kletka7==kletka4:
+                                                    figura44-=1
                                             else:
                                                 kletka8=(int(kletka8)+int(tort))
                                                 kletka8=(proVerka(kletka8))
+                                                if kletka8==kletka:
+                                                    figura11-=1
+                                                elif kletka8==kletka2:
+                                                    figura22-=1
+                                                elif kletka8==kletka3:
+                                                    figura33-=1
+                                                elif kletka8==kletka4:
+                                                    figura44-=1
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -438,15 +723,47 @@ if vybor==2:
                                     if vod2==1:
                                         kletka5=(int(kletka5)+int(tort))
                                         kletka5=(proVerka(kletka5))
+                                        if kletka5==kletka:
+                                            figura11-=1
+                                        elif kletka5==kletka2:
+                                            figura22-=1
+                                        elif kletka5==kletka3:
+                                            figura33-=1
+                                        elif kletka5==kletka4:
+                                            figura44-=1
                                     elif vod2==2:
                                         kletka6=(int(kletka6)+int(tort))
                                         kletka6=(proVerka(kletka6))
+                                        if kletka6==kletka:
+                                            figura11-=1
+                                        elif kletka6==kletka2:
+                                            figura22-=1
+                                        elif kletka6==kletka3:
+                                            figura33-=1
+                                        elif kletka6==kletka4:
+                                            figura44-=1 
                                     elif vod2==3:
                                         kletka7=(int(kletka7)+int(tort))
                                         kletka7=(proVerka(kletka7))
+                                        if kletka7==kletka:
+                                            figura11-=1
+                                        elif kletka7==kletka2:
+                                            figura22-=1
+                                        elif kletka7==kletka3:
+                                            figura33-=1
+                                        elif kletka7==kletka4:
+                                            figura44-=1
                                     else:
                                         kletka8=(int(kletka8)+int(tort))
                                         kletka8=(proVerka(kletka8))
+                                        if kletka8==kletka:
+                                            figura11-=1
+                                        elif kletka8==kletka2:
+                                            figura22-=1
+                                        elif kletka8==kletka3:
+                                            figura33-=1
+                                        elif kletka8==kletka4:
+                                            figura44-=1
                                 else:
                                     print('OK')  
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
