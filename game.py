@@ -1,4 +1,4 @@
-print('Игра Муха(Мини-Нарды)')
+print('Игра Муха(Мини-Нарды) v1.0')
 print('Выбирите количество игроков 2-4')
 def proVerka(kletka5):
     if kletka5>28:
@@ -104,58 +104,106 @@ if vybor==2:
                                 kletka=(int(kletka)+int(tort))
                                 if kletka==kletka5:
                                     figura55-=1
-                                    kletka55=0
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka==kletka6:
                                     figura66-=1
-                                    kletka66=0
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka==kletka7:
                                     figura77-=1
-                                    kletka77=0
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka==kletka8:
                                     figura88-=1
-                                    kletka88=0
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                             elif vod2==2:
                                 kletka2=(int(kletka2)+int(tort))
                                 if kletka2==kletka5:
                                     figura55-=1
-                                    kletka55=0
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka2==kletka6:
                                     figura66-=1
-                                    kletka66=0
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka2==kletka7:
                                     figura77-=1
-                                    kletka77=0
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka2==kletka8:
                                     figura88-=1
-                                    kletka88=0
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                             elif vod2==3:
                                 kletka3=(int(kletka3)+int(tort))
                                 if kletka3==kletka5:
                                     figura55-=1
-                                    kletka55=0
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka3==kletka6:
                                     figura66-=1
-                                    kletka66=0
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka3==kletka7:
                                     figura77-=1
-                                    kletka77=0
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka3==kletka8:
                                     figura88-=1
-                                    kletka88=0
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                             else:
                                 kletka4=(int(kletka4)+int(tort))
                                 if kletka4==kletka5:
                                     figura55-=1
-                                    kletka55=0
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka4==kletka6:
                                     figura66-=1
-                                    kletka66=0
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka4==kletka7:
                                     figura77-=1
-                                    kletka77=0
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka4==kletka8:
                                     figura88-=1
-                                    kletka88=0
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                         print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                         print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -177,43 +225,107 @@ if vybor==2:
                                         kletka=(int(kletka)+int(tort))
                                         if kletka==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     elif vod==2:
                                         kletka2=(int(kletka2)+int(tort))
                                         if kletka2==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka2==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka2==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka2==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     elif vod==3:
                                         kletka3=(int(kletka3)+int(tort))
                                         if kletka3==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka3==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka3==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka3==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                             
                                     else:       
                                         kletka4=(int(kletka4)+int(tort))
                                         if kletka4==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka4==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka4==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka4==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                                     print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                                     print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -261,42 +373,106 @@ if vybor==2:
                                             kletka=(int(kletka)+int(tort))
                                             if kletka==kletka5:
                                                 figura55-=1
+                                                kletka5=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 1 противника')
+                                                print('Фигура 1- ', figura55 )
                                             elif kletka==kletka6:
                                                 figura66-=1
+                                                kletka6=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 2 противника')
+                                                print('Фигура 2- ', figura66 )
                                             elif kletka==kletka7:
                                                 figura77-=1
+                                                kletka7=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 3 противника')
+                                                print('Фигура 3- ', figura77 )
                                             elif kletka==kletka8:
                                                 figura88-=1
+                                                kletka8=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 4 противника')
+                                                print('Фигура 4- ', figura88 )
                                         elif vod2==2:
                                             kletka2=(int(kletka2)+int(tort))
                                             if kletka2==kletka5:
                                                 figura55-=1
+                                                kletka5=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 1 противника')
+                                                print('Фигура 1- ', figura55 )
                                             elif kletka2==kletka6:
                                                 figura66-=1
+                                                kletka6=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 2 противника')
+                                                print('Фигура 3- ', figura66 )
                                             elif kletka2==kletka7:
                                                 figura77-=1
+                                                kletka7=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 3 противника')
+                                                print('Фигура 3- ', figura77 )
                                             elif kletka2==kletka8:
                                                 figura88-=1
+                                                kletka8=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 4 противника')
+                                                print('Фигура 4- ', figura88 )
                                         elif vod2==3:
                                             kletka3=(int(kletka3)+int(tort))
                                             if kletka3==kletka5:
                                                 figura55-=1
+                                                kletka5=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 1 противника')
+                                                print('Фигура 1- ', figura55 )
                                             elif kletka3==kletka6:
                                                 figura66-=1
+                                                kletka6=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 2 противника')
+                                                print('Фигура 2- ', figura66 )
                                             elif kletka3==kletka7:
                                                 figura77-=1
+                                                kletka7=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 3 противника')
+                                                print('Фигура 3- ', figura77 )
                                             elif kletka3==kletka8:
                                                 figura88-=1
+                                                kletka8=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 4 противника')
+                                                print('Фигура 4- ', figura88 )
                                         else:
                                             kletka4=(int(kletka4)+int(tort))
                                             if kletka4==kletka5:
                                                 figura55-=1
+                                                kletka5=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 1 противника')
+                                                print('Фигура 1- ', figura55 )
                                             elif kletka4==kletka6:
                                                 figura66-=1
+                                                kletka6=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 2 противника')
+                                                print('Фигура 2- ', figura66 )
                                             elif kletka4==kletka7:
                                                 figura77-=1
+                                                kletka7=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 3 противника')
+                                                print('Фигура 3- ', figura77 )
                                             elif kletka4==kletka8:
                                                 figura88-=1
+                                                kletka8=0
+                                                suma2-=1
+                                                print('Вы скушали фигуру 4 противника')
+                                                print('Фигура 4- ', figura88 )
                                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                                         print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                                         print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -312,42 +488,106 @@ if vybor==2:
                                         kletka=(int(kletka)+int(tort))
                                         if kletka==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     elif vod2==2:
                                         kletka2=(int(kletka2)+int(tort))
                                         if kletka2==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka2==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka2==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka2==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     elif vod2==3:
                                         kletka3=(int(kletka3)+int(tort))
                                         if kletka3==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka3==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka3==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka3==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     else:
                                         kletka4=(int(kletka4)+int(tort))
                                         if kletka4==kletka5:
                                             figura55-=1
+                                            kletka5=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura55 )
                                         elif kletka4==kletka6:
                                             figura66-=1
+                                            kletka6=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura66 )
                                         elif kletka4==kletka7:
                                             figura77-=1
+                                            kletka7=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura77 )
                                         elif kletka4==kletka8:
                                             figura88-=1
+                                            kletka8=0
+                                            suma2-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura88 )
                                     print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
                                     print('Местонахождение Фигуры 2-', kletka2, 'Клеточка')
                                     print('Местонахождение Фигуры 3-', kletka3, 'Клеточка')
@@ -369,42 +609,106 @@ if vybor==2:
                                 kletka=(int(kletka)+int(tort))
                                 if kletka==kletka5:
                                     figura55-=1
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka==kletka6:
                                     figura66-=1
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka==kletka7:
                                     figura77-=1
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka==kletka8:
                                     figura88-=1
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                             elif vod2==2:
                                 kletka2=(int(kletka2)+int(tort))
                                 if kletka2==kletka5:
                                     figura55-=1
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka2==kletka6:
                                     figura66-=1
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka2==kletka7:
                                     figura77-=1
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka2==kletka8:
                                     figura88-=1
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                             elif vod2==3:
                                 kletka3=(int(kletka3)+int(tort))
                                 if kletka3==kletka5:
                                     figura55-=1
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka3==kletka6:
                                     figura66-=1
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka3==kletka7:
                                     figura77-=1
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka3==kletka8:
                                     figura88-=1
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                             else:
                                 kletka4=(int(kletka4)+int(tort))
                                 if kletka4==kletka5:
                                     figura55-=1
+                                    kletka5=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 1 противника')
+                                    print('Фигура 1- ', figura55 )
                                 elif kletka4==kletka6:
                                     figura66-=1
+                                    kletka6=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 2 противника')
+                                    print('Фигура 2- ', figura66 )
                                 elif kletka4==kletka7:
                                     figura77-=1
+                                    kletka7=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 3 противника')
+                                    print('Фигура 3- ', figura77 )
                                 elif kletka4==kletka8:
                                     figura88-=1
+                                    kletka8=0
+                                    suma2-=1
+                                    print('Вы скушали фигуру 4 противника')
+                                    print('Фигура 4- ', figura88 )
                         else:
                             print('OK')    
                         print('Местонахождение Фигуры 1-', kletka, 'Клеточка')
@@ -454,45 +758,109 @@ if vybor==2:
                                         kletka5=(proVerka(kletka5))
                                         if kletka5==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka5==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka5==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka5==kletka4:
                                             figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                     elif vod2==2:
                                         kletka6=(int(kletka6)+int(tort))
                                         kletka6=(proVerka(kletka6))
                                         if kletka6==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka6==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura33 )
                                         elif kletka6==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura44 )
                                         elif kletka6==kletka4:
-                                            figura44-=1 
+                                            figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                     elif vod2==3:
                                         kletka7=(int(kletka7)+int(tort))
                                         kletka7=(proVerka(kletka7))
                                         if kletka7==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka7==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka7==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka7==kletka4:
-                                            figura44-=1 
+                                            figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura11 )
                                     else:
                                         kletka8=(int(kletka8)+int(tort))
                                         kletka8=(proVerka(kletka8))
                                         if kletka8==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka8==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka8==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka8==kletka4:
-                                            figura44-=1 
+                                            figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -516,45 +884,109 @@ if vybor==2:
                                                  kletka5=(proVerka(kletka5))
                                                  if kletka5==kletka:
                                                      figura11-=1
+                                                     kletka=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 1 противника')
+                                                     print('Фигура 1- ', figura11 )
                                                  elif kletka5==kletka2:
                                                      figura22-=1
+                                                     kletka2=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 2 противника')
+                                                     print('Фигура 2- ', figura22 )
                                                  elif kletka5==kletka3:
                                                      figura33-=1
+                                                     kletka3=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 3 противника')
+                                                     print('Фигура 3- ', figura33 )
                                                  elif kletka5==kletka4:
-                                                     figura44-=1 
+                                                     figura44-=1
+                                                     kletka4=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 4 противника')
+                                                     print('Фигура 4- ', figura44 )
                                             elif vod2==2:
                                                  kletka6=(int(kletka6)+int(tort))
                                                  kletka6=(proVerka(kletka6))
                                                  if kletka6==kletka:
                                                      figura11-=1
+                                                     kletka=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 1 противника')
+                                                     print('Фигура 1- ', figura11 )
                                                  elif kletka6==kletka2:
                                                      figura22-=1
+                                                     kletka2=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 2 противника')
+                                                     print('Фигура 2- ', figura22 )
                                                  elif kletka6==kletka3:
                                                      figura33-=1
+                                                     kletka3=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 3 противника')
+                                                     print('Фигура 3- ', figura33 )
                                                  elif kletka6==kletka4:
                                                      figura44-=1
+                                                     kletka4=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 4 противника')
+                                                     print('Фигура 4- ', figura44 )
                                             elif vod2==3:
                                                  kletka7=(int(kletka7)+int(tort))
                                                  kletka7=(proVerka(kletka7))
                                                  if kletka7==kletka:
                                                      figura11-=1
+                                                     kletka=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 1 противника')
+                                                     print('Фигура 1- ', figura11 )
                                                  elif kletka7==kletka2:
                                                      figura22-=1
+                                                     kletka2=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 2 противника')
+                                                     print('Фигура 2- ', figura22 )
                                                  elif kletka7==kletka3:
                                                      figura33-=1
+                                                     kletka3=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 3 противника')
+                                                     print('Фигура 3- ', figura33 )
                                                  elif kletka7==kletka4:
-                                                     figura44-=1 
+                                                     figura44-=1
+                                                     kletka4=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 4 противника')
+                                                     print('Фигура 4- ', figura44 )
                                             else:       
                                                  kletka8=(int(kletka8)+int(tort))
                                                  kletka8=(proVerka(kletka8))
                                                  if kletka8==kletka:
                                                      figura11-=1
+                                                     kletka=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 1 противника')
+                                                     print('Фигура 1- ', figura11 )
                                                  elif kletka8==kletka2:
                                                      figura22-=1
+                                                     kletka2=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 2 противника')
+                                                     print('Фигура 2- ', figura22 )
                                                  elif kletka8==kletka3:
                                                      figura33-=1
+                                                     kletka3=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 3 противника')
+                                                     print('Фигура 3- ', figura33 )
                                                  elif kletka8==kletka4:
                                                      figura44-=1
+                                                     kletka4=0
+                                                     suma-=1
+                                                     print('Вы скушали фигуру 4 противника')
+                                                     print('Фигура 4- ', figura44 )
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -604,45 +1036,109 @@ if vybor==2:
                                                     kletka5=(proVerka(kletka5))
                                                     if kletka5==kletka:
                                                         figura11-=1
+                                                        kletka=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 1 противника')
+                                                        print('Фигура 1- ', figura11 )
                                                     elif kletka5==kletka2:
                                                         figura22-=1
+                                                        kletka2=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 2 противника')
+                                                        print('Фигура 2- ', figura22 )
                                                     elif kletka5==kletka3:
                                                         figura33-=1
+                                                        kletka3=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 3 противника')
+                                                        print('Фигура 4- ', figura33 )
                                                     elif kletka5==kletka4:
-                                                        figura44-=1 
+                                                        figura44-=1
+                                                        kletka4=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 4 противника')
+                                                        print('Фигура 4- ', figura44 )
                                                 elif vod2==2:
                                                     kletka6=(int(kletka6)+int(tort))
                                                     kletka6=(proVerka(kletka6))
                                                     if kletka6==kletka:
                                                         figura11-=1
+                                                        kletka=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 1 противника')
+                                                        print('Фигура 1- ', figura11 )
                                                     elif kletka6==kletka2:
                                                         figura22-=1
+                                                        kletka2=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 2 противника')
+                                                        print('Фигура 2- ', figura22 )
                                                     elif kletka6==kletka3:
                                                         figura33-=1
+                                                        kletka3=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 3 противника')
+                                                        print('Фигура 3- ', figura33 )
                                                     elif kletka6==kletka4:
-                                                        figura44-=1 
+                                                        figura44-=1
+                                                        kletka4=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 4 противника')
+                                                        print('Фигура 4- ', figura44 )
                                                 elif vod2==3:
                                                     kletka7=(int(kletka7)+int(tort))
                                                     kletka7=(proVerka(kletka7))
                                                     if kletka7==kletka:
                                                         figura11-=1
+                                                        kletka=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 1 противника')
+                                                        print('Фигура 1- ', figura11 )
                                                     elif kletka7==kletka2:
                                                         figura22-=1
+                                                        kletka2=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 2 противника')
+                                                        print('Фигура 2- ', figura22 )
                                                     elif kletka7==kletka3:
                                                         figura33-=1
+                                                        kletka3=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 3 противника')
+                                                        print('Фигура 3- ', figura33 )
                                                     elif kletka7==kletka4:
                                                         figura44-=1
+                                                        kletka4=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 4 противника')
+                                                        print('Фигура 4- ', figura44 )
                                                 else:
                                                     kletka8=(int(kletka8)+int(tort))
                                                     kletka8=(proVerka(kletka8))
                                                     if kletka8==kletka:
                                                         figura11-=1
+                                                        kletka=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 1 противника')
+                                                        print('Фигура 1- ', figura11 )
                                                     elif kletka8==kletka2:
                                                         figura22-=1
+                                                        kletka2=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 2 противника')
+                                                        print('Фигура 2- ', figura22 )
                                                     elif kletka8==kletka3:
                                                         figura33-=1
+                                                        kletka3=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 3 противника')
+                                                        print('Фигура 3- ', figura33 )
                                                     elif kletka8==kletka4:
-                                                        figura44-=1 
+                                                        figura44-=1
+                                                        kletka4=0
+                                                        suma-=1
+                                                        print('Вы скушали фигуру 4 противника')
+                                                        print('Фигура 4- ', figura44 )
                                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                                 print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                                 print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -661,45 +1157,109 @@ if vybor==2:
                                                 kletka5=(proVerka(kletka5))
                                                 if kletka5==kletka:
                                                     figura11-=1
+                                                    kletka=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 1 противника')
+                                                    print('Фигура 1- ', figura11 )
                                                 elif kletka5==kletka2:
                                                     figura22-=1
+                                                    kletka2=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 2 противника')
+                                                    print('Фигура 2- ', figura22 )
                                                 elif kletka5==kletka3:
                                                     figura33-=1
+                                                    kletka3=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 3 противника')
+                                                    print('Фигура 3- ', figura33 )
                                                 elif kletka5==kletka4:
                                                     figura44-=1
+                                                    kletka4=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 4 противника')
+                                                    print('Фигура 4- ', figura44 )
                                             elif vod2==2:
                                                 kletka6=(int(kletka6)+int(tort))
                                                 kletka6=(proVerka(kletka6))
                                                 if kletka6==kletka:
                                                     figura11-=1
+                                                    kletka=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 1 противника')
+                                                    print('Фигура 1- ', figura11 )
                                                 elif kletka6==kletka2:
                                                     figura22-=1
+                                                    kletka2=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 2 противника')
+                                                    print('Фигура 2- ', figura22 )
                                                 elif kletka6==kletka3:
                                                     figura33-=1
+                                                    kletka3=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 3 противника')
+                                                    print('Фигура 3- ', figura33 )
                                                 elif kletka6==kletka4:
-                                                    figura44-=1 
+                                                    figura44-=1
+                                                    kletka4=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 4 противника')
+                                                    print('Фигура 4- ', figura44 )
                                             elif vod2==3:
                                                 kletka7=(int(kletka7)+int(tort))
                                                 kletka7=(proVerka(kletka7))
                                                 if kletka7==kletka:
                                                     figura11-=1
+                                                    kletka=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 1 противника')
+                                                    print('Фигура 1- ', figura11 )
                                                 elif kletka7==kletka2:
                                                     figura22-=1
+                                                    kletka2=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 2 противника')
+                                                    print('Фигура 2- ', figura22 )
                                                 elif kletka7==kletka3:
                                                     figura33-=1
+                                                    kletka3=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 3 противника')
+                                                    print('Фигура 3- ', figura33 )
                                                 elif kletka7==kletka4:
                                                     figura44-=1
+                                                    kletka4=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 4 противника')
+                                                    print('Фигура 4- ', figura44 )
                                             else:
                                                 kletka8=(int(kletka8)+int(tort))
                                                 kletka8=(proVerka(kletka8))
                                                 if kletka8==kletka:
                                                     figura11-=1
+                                                    kletka=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 1 противника')
+                                                    print('Фигура 1- ', figura11 )
                                                 elif kletka8==kletka2:
                                                     figura22-=1
+                                                    kletka2=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 2 противника')
+                                                    print('Фигура 2- ', figura22 )
                                                 elif kletka8==kletka3:
                                                     figura33-=1
+                                                    kletka3=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 3 противника')
+                                                    print('Фигура 3- ', figura33 )
                                                 elif kletka8==kletka4:
                                                     figura44-=1
+                                                    kletka4=0
+                                                    suma-=1
+                                                    print('Вы скушали фигуру 4 противника')
+                                                    print('Фигура 4- ', figura44 )
                                             print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
                                             print('Местонахождение Фигуры 2-', kletka6, 'Клеточка')
                                             print('Местонахождение Фигуры 3-', kletka7, 'Клеточка')
@@ -725,45 +1285,109 @@ if vybor==2:
                                         kletka5=(proVerka(kletka5))
                                         if kletka5==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka5==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka5==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka5==kletka4:
                                             figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                     elif vod2==2:
                                         kletka6=(int(kletka6)+int(tort))
                                         kletka6=(proVerka(kletka6))
                                         if kletka6==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka6==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka6==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka6==kletka4:
-                                            figura44-=1 
+                                            figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                     elif vod2==3:
                                         kletka7=(int(kletka7)+int(tort))
                                         kletka7=(proVerka(kletka7))
                                         if kletka7==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka7==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka7==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka7==kletka4:
                                             figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                     else:
                                         kletka8=(int(kletka8)+int(tort))
                                         kletka8=(proVerka(kletka8))
                                         if kletka8==kletka:
                                             figura11-=1
+                                            kletka=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 1 противника')
+                                            print('Фигура 1- ', figura11 )
                                         elif kletka8==kletka2:
                                             figura22-=1
+                                            kletka2=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 2 противника')
+                                            print('Фигура 2- ', figura22 )
                                         elif kletka8==kletka3:
                                             figura33-=1
+                                            kletka3=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 3 противника')
+                                            print('Фигура 3- ', figura33 )
                                         elif kletka8==kletka4:
                                             figura44-=1
+                                            kletka4=0
+                                            suma-=1
+                                            print('Вы скушали фигуру 4 противника')
+                                            print('Фигура 4- ', figura44 )
                                 else:
                                     print('OK')  
                                 print('Местонахождение Фигуры 1-', kletka5, 'Клеточка')
