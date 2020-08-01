@@ -241,7 +241,11 @@ while game:
         print("***")
         print(one.name, " стартовая позиция ", "(", one.startPosition, ")")
         cube = random.randint(1, 6)
+<<<<<<< HEAD
         # cube = int(input())
+=======
+        #cube = int(input())
+>>>>>>> 15bae00691182c92df9560cfcf75d6934ec02bca
         print("кубик:", cube)
         while cube == 6:
             if one.counter < 4 and board[one.startPosition].invader != one.startPosition:
@@ -263,7 +267,11 @@ while game:
                 break
             else:
                 cube = random.randint(1, 6)
+<<<<<<< HEAD
                 # cube = int(input())
+=======
+                #cube = int(input())
+>>>>>>> 15bae00691182c92df9560cfcf75d6934ec02bca
                 print("кубик:", cube)
         one.step(board, cube, player)
         # проверка домика игрока

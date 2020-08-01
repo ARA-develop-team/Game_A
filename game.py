@@ -13,15 +13,141 @@ def proVerka(kletka5):
         print('gtg')
 
 
-# def proVerka2(kletka):заморожен
-# if kletka>28:
-# figura11+=1
-# return kletka
-# elif kletka<28:
-# kletka=kletka
-# return kletka
-# else:
-# print('gtg')
+def proVerka1(kletka):
+    if kletka>28:
+        figura11+=1
+        return figura11
+        del city_list1[0]
+    elif kletka<28:
+        figura11=figura11
+        return figura11
+    else:
+        print('gtg')
+
+def proVerka2(kletka2):
+    if kletka2>28 and figura11==2:
+        figura22+=1
+        return figura22
+        del city_list1[0]
+    elif kletka2>28:
+        figura22+=1
+        return figura22
+        del city_list1[1]
+    elif kletka2<28:
+        figura22=figura22
+        return figura22
+    else:
+        print('gtg')
+
+def proVerka3(kletka3):
+    if kletka3>28 and figura11==2 and figura22==2:
+        figura33+=1
+        return figura33
+        del city_list1[0]
+    elif kletka3>28 and figura11==2 or figura22==2:
+        figura33+=1
+        return figura33
+        del city_list1[1]
+    elif kletka3>28:
+        figura33+=1
+        return figura33
+        del city_list1[2]
+    elif kletka3<28:
+        figura33=figura33
+        return figura33
+    else:
+        print('gtg')
+
+def proVerka4(kletka4):
+    if kletka4>28 and figura11==2 and figura22==2 and figura33==2:
+        figura44+=1
+        return figura44
+        del city_list1[0]
+    elif kletka4>28 and figura11==2 and figura22==2:
+        figura44+=1
+        return figura44
+        del city_list1[1]
+    elif kletka4>28 and figura11==2 or figura22==2 or figura33==2:
+        figura44+=1
+        return figura44
+        del city_list1[2]
+    elif kletka4>28:
+        figura44+=1
+        return figura44
+        del city_list1[3]
+    elif kletka4<28:
+        figura44=figura44
+        return figura44
+    else:
+        print('gtg')
+
+'''def proVerka5(kletka5): Надо подумать!
+    if kletka5>7:
+        figura55+=1
+        return figura55
+        del city_list3[0]
+    elif kletka5<7:
+        figura55=figura55
+        return figura55
+    else:
+        print('gtg')
+
+def proVerka6(kletka6):
+    if kletka6>7 and figura55==2:
+        figura66+=1
+        return figura66
+        del city_list3[0]
+    elif kletka6>7:
+        figura66+=1
+        return figura66
+        del city_list3[1]
+    elif kletka6<7:
+        figura66=figura66
+        return figura66
+    else:
+        print('gtg')
+
+def proVerka7(kletka7):
+    if kletka7>7 and figura55==2 and figura66==2:
+        figura77+=1
+        return figura77
+        del city_list3[0]
+    elif kletka7>7 and figura55==2 or figura66==2:
+        figura77+=1
+        return figura77
+        del city_list3[1]
+    elif kletka7>7:
+        figura77+=1
+        return figura77
+        del city_list3[2]
+    elif kletka7<7:
+        figura77=figura77
+        return figura77
+    else:
+        print('gtg')
+
+def proVerka8(kletka8):
+    if kletka8>28 and figura11==2 and figura22==2 and figura33==2:
+        figura44+=1
+        return figura44
+        del city_list1[0]
+    elif kletka4>28 and figura11==2 and figura22==2:
+        figura44+=1
+        return figura44
+        del city_list1[1]
+    elif kletka4>28 and figura11==2 or figura22==2 or figura33==2:
+        figura44+=1
+        return figura44
+        del city_list1[2]
+    elif kletka4>28:
+        figura44+=1
+        return figura44
+        del city_list1[3]
+    elif kletka4<28:
+        figura44=figura44
+        return figura44
+    else:
+        print('gtg')'''
 end1 = 28
 end2 = 7
 # Game1
@@ -71,25 +197,12 @@ if vybor == 2:
         else:
             import random
 
-<<<<<<< HEAD
-            city_list = ['1','2','3','4','5','6']
-            dostyp=str(input( ))
-            if dostyp=='F':
-                tort=(random.choice(city_list))                
-                print(name1,'Кубик кинут - ', tort)
-                #figura11=1
-                #figura11+=3
-                #figura11-=2
-                #figura11-=1
-                game1=True
-=======
             city_list = ['1', '2', '3', '4', '5', '6']
             dostyp = str(input())
             if dostyp == 'F':
                 tort = (random.choice(city_list))
                 print(name1, 'Кубик кинут - ', tort)
                 game1 = True
->>>>>>> 296f90b8000302aec50a9100bf8cf6deb4a79494
                 while game:
                     if tort == '6':
                         print('Хотите ли вы вывести фигуру?(YES-NO)')
@@ -123,6 +236,7 @@ if vybor == 2:
                                 kletka11 = kletka
                                 for i in city_list3:
                                     kletka = (int(kletka) + int(tort))
+                                    figura11=(proVerka1(figura11))
                                     if i < kletka and i > kletka11:
                                         kletka = (int(kletka) - int(tort))
                                         a = (int(i))
@@ -158,6 +272,7 @@ if vybor == 2:
                                 kletka22 = kletka2
                                 for i in city_list3:
                                     kletka2 = (int(kletka2) + int(tort))
+                                    figura22 = (proVerka2(figura22))
                                     if i < kletka2 and i > kletka22:
                                         kletka2 = (int(kletka2) - int(tort))
                                         a2 = (int(i))
@@ -193,6 +308,7 @@ if vybor == 2:
                                 kletka33 = kletka3
                                 for i in city_list3:
                                     kletka3 = (int(kletka3) + int(tort))
+                                    figura33 = (proVerka3(figura33))
                                     if i < kletka3 and i > kletka33:
                                         kletka3 = (int(kletka3) - int(tort))
                                         a3 = (int(i))
@@ -228,6 +344,7 @@ if vybor == 2:
                                 kletka44 = kletka4
                                 for i in city_list3:
                                     kletka4 = (int(kletka4) + int(tort))
+                                    figura44 = (proVerka4(figura44))
                                     if i < kletka4 and i > kletka44:
                                         kletka4 = (int(kletka4) - int(tort))
                                         a4 = (int(i))
@@ -280,6 +397,7 @@ if vybor == 2:
                                         kletka11 = kletka
                                         for i in city_list3:
                                             kletka = (int(kletka) + int(tort))
+                                            figura11 = (proVerka1(figura11))
                                             if i < kletka and i > kletka11:
                                                 kletka = (int(kletka) - int(tort))
                                                 a = (int(i))
@@ -315,6 +433,7 @@ if vybor == 2:
                                         kletka22 = kletka2
                                         for i in city_list3:
                                             kletka2 = (int(kletka2) + int(tort))
+                                            figura22 = (proVerka2(figura22))
                                             if i < kletka2 and i > kletka22:
                                                 kletka2 = (int(kletka2) - int(tort))
                                                 a2 = (int(i))
@@ -350,6 +469,7 @@ if vybor == 2:
                                         kletka33 = kletka3
                                         for i in city_list3:
                                             kletka3 = (int(kletka3) + int(tort))
+                                            figura33 = (proVerka3(figura33))
                                             if i < kletka3 and i > kletka33:
                                                 kletka3 = (int(kletka3) - int(tort))
                                                 a3 = (int(i))
@@ -386,6 +506,7 @@ if vybor == 2:
                                         kletka44 = kletka4
                                         for i in city_list3:
                                             kletka4 = (int(kletka4) + int(tort))
+                                            figura44 = (proVerka4(figura44))
                                             if i < kletka4 and i > kletka44:
                                                 kletka4 = (int(kletka4) - int(tort))
                                                 a4 = (int(i))
@@ -464,6 +585,7 @@ if vybor == 2:
                                             kletka11 = kletka
                                             for i in city_list3:
                                                 kletka = (int(kletka) + int(tort))
+                                                figura11 = (proVerka1(figura11))
                                                 if i < kletka and i > kletka11:
                                                     kletka = (int(kletka) - int(tort))
                                                     a = (int(i))
@@ -499,6 +621,7 @@ if vybor == 2:
                                             kletka22 = kletka2
                                             for i in city_list3:
                                                 kletka2 = (int(kletka2) + int(tort))
+                                                figura22 = (proVerka2(figura22))
                                                 if i < kletka2 and i > kletka22:
                                                     kletka2 = (int(kletka2) - int(tort))
                                                     a2 = (int(i))
@@ -534,6 +657,7 @@ if vybor == 2:
                                             kletka33 = kletka3
                                             for i in city_list3:
                                                 kletka3 = (int(kletka3) + int(tort))
+                                                figura33 = (proVerka3(figura33))
                                                 if i < kletka3 and i > kletka33:
                                                     kletka3 = (int(kletka3) - int(tort))
                                                     a3 = (int(i))
@@ -569,6 +693,7 @@ if vybor == 2:
                                             kletka44 = kletka4
                                             for i in city_list3:
                                                 kletka4 = (int(kletka4) + int(tort))
+                                                figura44 = (proVerka4(figura44))
                                                 if i < kletka4 and i > kletka44:
                                                     kletka4 = (int(kletka4) - int(tort))
                                                     a4 = (int(i))
@@ -615,6 +740,7 @@ if vybor == 2:
                                         kletka11 = kletka
                                         for i in city_list3:
                                             kletka = (int(kletka) + int(tort))
+                                            figura11 = (proVerka1(figura11))
                                             if i < kletka and i > kletka11:
                                                 kletka = (int(kletka) - int(tort))
                                                 a = (int(i))
@@ -650,6 +776,7 @@ if vybor == 2:
                                         kletka22 = kletka2
                                         for i in city_list3:
                                             kletka2 = (int(kletka2) + int(tort))
+                                            figura22 = (proVerka2(figura22))
                                             if i < kletka2 and i > kletka22:
                                                 kletka2 = (int(kletka2) - int(tort))
                                                 a2 = (int(i))
@@ -685,6 +812,7 @@ if vybor == 2:
                                         kletka33 = kletka3
                                         for i in city_list3:
                                             kletka3 = (int(kletka3) + int(tort))
+                                            figura33 = (proVerka3(figura33))
                                             if i < kletka3 and i > kletka33:
                                                 kletka3 = (int(kletka3) - int(tort))
                                                 a3 = (int(i))
@@ -720,6 +848,7 @@ if vybor == 2:
                                         kletka44 = kletka4
                                         for i in city_list3:
                                             kletka4 = (int(kletka4) + int(tort))
+                                            figura44 = (proVerka4(figura44))
                                             if i < kletka4 and i > kletka44:
                                                 kletka4 = (int(kletka4) - int(tort))
                                                 a4 = (int(i))
@@ -772,6 +901,7 @@ if vybor == 2:
                                 kletka11 = kletka
                                 for i in city_list3:
                                     kletka = (int(kletka) + int(tort))
+                                    figura11 = (proVerka1(figura11))
                                     if i < kletka and i > kletka11:
                                         kletka = (int(kletka) - int(tort))
                                         a = (int(i))
@@ -807,6 +937,7 @@ if vybor == 2:
                                 kletka22 = kletka2
                                 for i in city_list3:
                                     kletka2 = (int(kletka2) + int(tort))
+                                    figura22 = (proVerka2(figura22))
                                     if i < kletka2 and i > kletka22:
                                         kletka2 = (int(kletka2) - int(tort))
                                         a2 = (int(i))
@@ -842,6 +973,7 @@ if vybor == 2:
                                 kletka33 = kletka3
                                 for i in city_list3:
                                     kletka3 = (int(kletka3) + int(tort))
+                                    figura33 = (proVerka3(figura33))
                                     if i < kletka3 and i > kletka33:
                                         kletka3 = (int(kletka3) - int(tort))
                                         a3 = (int(i))
@@ -877,6 +1009,7 @@ if vybor == 2:
                                 kletka44 = kletka4
                                 for i in city_list3:
                                     kletka4 = (int(kletka4) + int(tort))
+                                    figura44 = (proVerka4(figura44))
                                     if i < kletka4 and i > kletka44:
                                         kletka4 = (int(kletka4) - int(tort))
                                         a4 = (int(i))
@@ -1836,3 +1969,5 @@ else:
 
 # city_list = [1, 2, 3, 4, 5, 6]
 # print("Выбор случайного города из списка - ", random.choice(city_list))
+
+
