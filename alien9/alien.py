@@ -38,20 +38,20 @@ class Ship:
         if keys[pygame.K_LEFT]:
             if self.x>=0:
                 self.x=(self.x-self.speed)
-        elif keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT]:
             if self.x<=380:
                 self.x=(self.x+self.speed)
-        elif keys[pygame.K_UP]:
+        if keys[pygame.K_UP]:
             if self.y>=0:
                 self.y=(self.y-self.speed)
-        elif keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN]:
             if self.y<=370:
                 self.y=(self.y+self.speed)
-        elif keys[pygame.K_UP] and keys[pygame.K_LEFT]:
+        if keys[pygame.K_UP] and keys[pygame.K_LEFT]:
             if self.y>=0 and self.x>=0:
                 self.y=(self.y-self.speed)
                 self.x = (self.x - self.speed)
-        elif keys[pygame.K_UP] and keys[pygame.K_RIGHT]:
+        if keys[pygame.K_UP] and keys[pygame.K_RIGHT]:
             if self.y>=0 and self.x<=370:
                 self.y=(self.y-self.speed)
                 self.x = (self.x + self.speed)
@@ -112,7 +112,7 @@ neo=0
 class AngryAlien:
     def __init__(self,color0,widht5,height5):
         self.x6=random.randint(50,460)
-        self.y6=random.randint(-200,0)
+        self.y6=random.randint(-500,-200)
         self.color0=color0
         self.widht5=widht5
         self.height5=height5
@@ -122,8 +122,8 @@ class AngryAlien:
         sc.blit(im_new,[self.x6,self.y6])
     def dwig3(self,angry):
         self.y6+=self.speed8
-        if self.y6>500:
-            self.y=0
+        if self.y6>620:
+            #self.y=0
             del angry[0]
     def proverka2(self,x7,y7):
         if self.x6-10<x7<self.x6+10 and self.y6-10<y7<self.y6+10:
@@ -152,8 +152,8 @@ class Bullet:
 
 def dobavka(angry):
     if len(angry)<5:
-        for al in range(5):
-            angry.append(AngryAlien(color0,widht5,height5))
+        #for al in range(5):
+        angry.append(AngryAlien(color0,widht5,height5))
 
 
 #bull=Bullet(x1,y1,height1,widht1,speed1)
