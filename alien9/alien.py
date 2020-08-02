@@ -117,6 +117,7 @@ color_red=(255, 0, 0)
 new_bullet=[]
 
 
+
 class AngryAlien:
     def __init__(self,color0,widht5,height5):
         self.x6=random.randint(50,460)
@@ -126,11 +127,17 @@ class AngryAlien:
         self.height5=height5
         self.speed8=1
         self.angry_bullet=[]
+        self.speed9=1
     def spawn(self):
         #pygame.draw.rect(sc, self.color0, (self.x6, self.y6, self.widht5, self.height5))
         sc.blit(im_new,[self.x6,self.y6])
     def dwig3(self,angry):
-        self.y6+=self.speed8
+        self.y6+=self.speed9
+        if self.x6==50:
+            self.speed8=1
+        elif self.x6==450:
+            self.speed8=-1
+        self.x6 += self.speed8
         if self.y6>620:
             del angry[0]
     #def proverka2(self,x7,y7):
@@ -244,16 +251,21 @@ while run3:
                         angry.remove(a1)
     if len(new_bullet)>0:
         for q3 in new_bullet:
-            if (ship2.x + 5 < q3.x1 < ship2.x + 123) and (ship2.y+30 < q3.y1 < ship2.y + 115) or (ship2.x + 5 < q3.x1 + 5 < ship2.x + 123) and (ship2.y+30 < q3.y1 + 40 < ship2.y + 115):
+            if (ship2.x + 15 < q3.x1 < ship2.x + 115) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 15 < q3.x1 + 5 < ship2.x + 115) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
                 run3=False
                 break
     if len(angry)>0:
         for q4 in angry:
             if len(q4.angry_bullet)>0:
                 for q3 in q4.angry_bullet:
-                    if (ship2.x + 5 < q3.x1 < ship2.x + 123) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 5 < q3.x1 + 5 < ship2.x + 123) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
+                    if (ship2.x + 15 < q3.x1 < ship2.x + 115) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 15 < q3.x1 + 5 < ship2.x + 115) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
                         run3 = False
                         break
+    if len(angry)>0:
+        for q3 in angry:
+            if (ship2.x + 5 < q3.x6 + 5 < ship2.x + 123) and (ship2.y + 30 < q3.y6 < ship2.y + 115) or (ship2.x + 5 < q3.x6 + 75 < ship2.x + 123) and (ship2.y + 30 < q3.y6 + 40 < ship2.y + 115):
+                run3 = False
+                break
     if len(new_bullet)>0:
         for q in new_bullet:
             q.snar()
