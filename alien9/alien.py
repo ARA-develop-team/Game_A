@@ -14,6 +14,7 @@ widht=20
 height=20
 speed=5
 FPS=60
+run3=True
 stand=pygame.image.load('ship3.png')
 im=pygame.image.load('blue2.png')
 im_new=pygame.transform.scale(im, (80, 120))
@@ -111,6 +112,9 @@ color0=(255,255,255)
 widht5=40
 height5=40
 angry=[]
+color_green=(0, 255, 0)
+color_red=(255, 0, 0)
+new_bullet=[]
 
 
 class AngryAlien:
@@ -121,6 +125,7 @@ class AngryAlien:
         self.widht5=widht5
         self.height5=height5
         self.speed8=1
+        self.angry_bullet=[]
     def spawn(self):
         #pygame.draw.rect(sc, self.color0, (self.x6, self.y6, self.widht5, self.height5))
         sc.blit(im_new,[self.x6,self.y6])
@@ -138,22 +143,38 @@ class AngryAlien:
     #pygame.display.update()
 
 class Bullet:
-    def __init__(self,x1,y1,height1,widht1,speed1):
+    def __init__(self,x1,y1,height1,widht1,speed1,color):
         self.x1=x1
         self.y1=y1
         self.height1=height1
         self.widht1=widht1
         self.speed1=speed1
         self.fps1=25
+        self.color=color
     def snar(self):
-        pygame.draw.rect(sc,(139, 0, 0),(self.x1,self.y1, self.widht1, self.height1))
+        pygame.draw.rect(sc,self.color,(self.x1,self.y1, self.widht1, self.height1))
     def polet(self):
         self.y1=(self.y1-self.speed1)
+    def polet2(self):
+        self.y1+=self.speed1
 
 def dobavka(angry):
     if len(angry)<5:
         #for al in range(5):
         angry.append(AngryAlien(color0,widht5,height5))
+
+def vistrel(korabel,height1, widht1, speed1, color_red):
+    lo=True
+    if len(korabel.angry_bullet)>0:
+        for po in korabel.angry_bullet:
+            if po.y1<korabel.y6+250:
+                lo=False
+                break
+        if lo:
+            korabel.angry_bullet.append(Bullet(korabel.x6 + 40, korabel.y6 + 40, height1, widht1, speed1, color_red))
+
+    else:
+        korabel.angry_bullet.append(Bullet(korabel.x6+40, korabel.y6+40, height1, widht1, speed1, color_red))
 
 
 #bull=Bullet(x1,y1,height1,widht1,speed1)
@@ -164,7 +185,7 @@ pygame.display.update()
     #angry.append(AngryAlien(color0, widht5, height5))
 for st in range(200):
     stars.append(Star(color,r))
-while 1:
+while run3:
     #draw()
     neo = True
     keys = pygame.key.get_pressed()
@@ -191,20 +212,19 @@ while 1:
             if da==False:
                 break
         if da:
-            bulle.append(Bullet(x5,y5,height1,widht1,speed1))
-    if len(bulle)>0:
-        for i in bulle:
+            bulle.append(Bullet(x5,y5,height1,widht1,speed1,color_green))
 
-            i.snar()
-            i.polet()
-            if i.y1<=0:
-                del bulle[0]
-    ship2.ship1()
     #for al in range(2):
         #angry.append(AngryAlien(color0,widht5,height5))
     if len(angry)>0:
         for a in angry:
             a.dwig3(angry)
+            if a.y6>0:
+                vistrel(a,height1, widht1, speed1, color_red)
+            if len(a.angry_bullet)>0:
+                for bu in a.angry_bullet:
+                    bu.snar()
+                    bu.polet2()
             a.spawn()
             if a.y6<=0:
                 neo=False
@@ -214,7 +234,39 @@ while 1:
         for b in bulle:
             for a1 in angry:
                 if(a1.x6 + 5 < b.x1 < a1.x6 + 75) and (a1.y6 < b.y1 < a1.y6 + 115) or (a1.x6 + 5 < b.x1 + 5 < a1.x6 + 75) and (a1.y6 < b.y1 + 40 < a1.y6 + 115):
-                    print('popal')
+                    #print('popal')
+                    bulle.remove(b)
+                    if len(a1.angry_bullet)>0:
+                        for q2 in a1.angry_bullet:
+                            new_bullet.append(q2)
+                        angry.remove(a1)
+                    else:
+                        angry.remove(a1)
+    if len(new_bullet)>0:
+        for q3 in new_bullet:
+            if (ship2.x + 5 < q3.x1 < ship2.x + 123) and (ship2.y+30 < q3.y1 < ship2.y + 115) or (ship2.x + 5 < q3.x1 + 5 < ship2.x + 123) and (ship2.y+30 < q3.y1 + 40 < ship2.y + 115):
+                run3=False
+                break
+    if len(angry)>0:
+        for q4 in angry:
+            if len(q4.angry_bullet)>0:
+                for q3 in q4.angry_bullet:
+                    if (ship2.x + 5 < q3.x1 < ship2.x + 123) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 5 < q3.x1 + 5 < ship2.x + 123) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
+                        run3 = False
+                        break
+    if len(new_bullet)>0:
+        for q in new_bullet:
+            q.snar()
+            q.polet2()
+            if q.y1>500:
+                new_bullet.remove(q)
+    if len(bulle)>0:
+        for i in bulle:
+            i.snar()
+            i.polet()
+            if i.y1<=0:
+                del bulle[0]
+    ship2.ship1()
     #keys,x4,y4=ship2.dvig(keys,x4,y4)
     #bull.polet(keys,run)
     #draw()
