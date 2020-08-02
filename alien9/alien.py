@@ -127,7 +127,6 @@ class AngryAlien:
     def dwig3(self,angry):
         self.y6+=self.speed8
         if self.y6>620:
-            #self.y6=0
             del angry[0]
     #def proverka2(self,x7,y7):
 
