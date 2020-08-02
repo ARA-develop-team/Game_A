@@ -38,20 +38,20 @@ class Ship:
         if keys[pygame.K_LEFT]:
             if self.x>=0:
                 self.x=(self.x-self.speed)
-        elif keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT]:
             if self.x<=380:
                 self.x=(self.x+self.speed)
-        elif keys[pygame.K_UP]:
+        if keys[pygame.K_UP]:
             if self.y>=0:
                 self.y=(self.y-self.speed)
-        elif keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN]:
             if self.y<=370:
                 self.y=(self.y+self.speed)
-        elif keys[pygame.K_UP] and keys[pygame.K_LEFT]:
+        if keys[pygame.K_UP] and keys[pygame.K_LEFT]:
             if self.y>=0 and self.x>=0:
                 self.y=(self.y-self.speed)
                 self.x = (self.x - self.speed)
-        elif keys[pygame.K_UP] and keys[pygame.K_RIGHT]:
+        if keys[pygame.K_UP] and keys[pygame.K_RIGHT]:
             if self.y>=0 and self.x<=370:
                 self.y=(self.y-self.speed)
                 self.x = (self.x + self.speed)
@@ -79,11 +79,11 @@ class Star:
     def __init__(self,color,r):
         self.color=color
         self.r=r
-        self.x=random.randint(-1000,1000)
+        self.x=random.randint(-20,520)
         self.y=random.randint(0,500)
-        self.speed3=4
-        self.speed4=7
-        self.speed5=2
+        self.speed3=3
+        self.speed4=5
+        self.speed5=1
     def star1(self):
         pygame.draw.circle(sc,self.color,(self.x,self.y),self.r)
     def dvig2(self,keys):
@@ -98,21 +98,25 @@ class Star:
             self.x+=self.speed3
             if self.x>1000:
                 self.x=500
+            if self.x > 520:
+                self.x = -20
         elif keys[pygame.K_RIGHT]:
             self.x-=self.speed3
             if self.x<-1000:
                 self.x=0
+            if self.x<-20:
+                self.x=520
 
 color0=(255,255,255)
 widht5=40
 height5=40
 angry=[]
-neo=0
+
 
 class AngryAlien:
     def __init__(self,color0,widht5,height5):
         self.x6=random.randint(50,460)
-        self.y6=random.randint(-200,0)
+        self.y6=random.randint(-300,-100)
         self.color0=color0
         self.widht5=widht5
         self.height5=height5
@@ -122,14 +126,11 @@ class AngryAlien:
         sc.blit(im_new,[self.x6,self.y6])
     def dwig3(self,angry):
         self.y6+=self.speed8
-        if self.y6>500:
-            self.y=0
+        if self.y6>620:
+            #self.y6=0
             del angry[0]
-    def proverka2(self,x7,y7):
-        if self.x6-10<x7<self.x6+10 and self.y6-10<y7<self.y6+10:
-            return True
-        else:
-            return False
+    #def proverka2(self,x7,y7):
+
 
 
 #po=AngryAlien(color0,widht5,height5)
@@ -152,8 +153,8 @@ class Bullet:
 
 def dobavka(angry):
     if len(angry)<5:
-        for al in range(5):
-            angry.append(AngryAlien(color0,widht5,height5))
+        #for al in range(5):
+        angry.append(AngryAlien(color0,widht5,height5))
 
 
 #bull=Bullet(x1,y1,height1,widht1,speed1)
@@ -162,10 +163,11 @@ ship2=Ship(x,y,widht,height,speed)
 pygame.display.update()
 #for al in range(2):
     #angry.append(AngryAlien(color0, widht5, height5))
-for st in range(600):
+for st in range(200):
     stars.append(Star(color,r))
 while 1:
     #draw()
+    neo = True
     keys = pygame.key.get_pressed()
     sc.fill((0, 0, 0))
     for star in stars:
@@ -201,16 +203,19 @@ while 1:
     ship2.ship1()
     #for al in range(2):
         #angry.append(AngryAlien(color0,widht5,height5))
-    #x7 = po.x6
-    #y7 = po.y6
-    #po.proverka2(x7, y7)
-    dobavka(angry)
-    for a in angry:
-        a.dwig3(angry)
-        a.spawn()
-    #x7 = po.x6
-    #y7 = po.y6
-    #po.proverka2(x7, y7)
+    if len(angry)>0:
+        for a in angry:
+            a.dwig3(angry)
+            a.spawn()
+            if a.y6<=0:
+                neo=False
+    if neo==True:
+        dobavka(angry)
+    if len(bulle)>0 and len(angry)>0:
+        for b in bulle:
+            for a1 in angry:
+                if(a1.x6 + 5 < b.x1 < a1.x6 + 75) and (a1.y6 < b.y1 < a1.y6 + 115) or (a1.x6 + 5 < b.x1 + 5 < a1.x6 + 75) and (a1.y6 < b.y1 + 40 < a1.y6 + 115):
+                    print('popal')
     #keys,x4,y4=ship2.dvig(keys,x4,y4)
     #bull.polet(keys,run)
     #draw()
