@@ -1,11 +1,12 @@
 import pygame
 import random
+import screen
 
 pygame.init()
 
 sc = pygame.display.set_mode((500, 500))
 clock = pygame.time.Clock()
-pygame.display.set_caption('Game')
+pygame.display.set_caption('Aliens Attack')
 #dog_surf = pygame.image.load('dog.bmp')
 #dog_surf.set_colorkey((255, 255, 255))
 x=230
@@ -20,7 +21,13 @@ im=pygame.image.load('blue2.png')
 im_new=pygame.transform.scale(im, (80, 120))
 im_new.set_colorkey((255, 255, 255))
 #bg = pygame.image.load('bg1.jpg')
-
+game=True
+score=0
+last_score=score
+money=0
+money_file=open('game.txt','r')
+money=int(money_file.read())
+money_file=open('game.txt','w')
 left=False
 right=True
 mo=False
@@ -75,6 +82,7 @@ color=(169, 169, 169)
 stars=[]
 bulle=[]
 r=1
+sound=True
 
 class Star:
     def __init__(self,color,r):
@@ -128,16 +136,23 @@ class AngryAlien:
         self.speed8=1
         self.angry_bullet=[]
         self.speed9=1
+        self.dest=random.randint(50,460)
     def spawn(self):
         #pygame.draw.rect(sc, self.color0, (self.x6, self.y6, self.widht5, self.height5))
         sc.blit(im_new,[self.x6,self.y6])
     def dwig3(self,angry):
         self.y6+=self.speed9
-        if self.x6==50:
-            self.speed8=1
-        elif self.x6==450:
-            self.speed8=-1
-        self.x6 += self.speed8
+        if self.x6==self.dest:
+            self.dest = random.randint(50, 460)
+        if self.x6>self.dest:
+            self.x6-=self.speed8
+        elif self.x6<self.dest:
+            self.x6+=self.speed8
+        #if self.x6==50:
+            #self.speed8=1
+        #elif self.x6==450:
+            #self.speed8=-1
+        #self.x6 += self.speed8
         if self.y6>620:
             del angry[0]
     #def proverka2(self,x7,y7):
@@ -188,104 +203,120 @@ def vistrel(korabel,height1, widht1, speed1, color_red):
 ship2=Ship(x,y,widht,height,speed)
 #ship2.ship1()
 pygame.display.update()
+pygame.mixer.music.load('music1.mp3')
+if sound:
+    pygame.mixer.music.play(-1)
 #for al in range(2):
     #angry.append(AngryAlien(color0, widht5, height5))
 for st in range(200):
     stars.append(Star(color,r))
-while run3:
-    #draw()
-    neo = True
-    keys = pygame.key.get_pressed()
-    sc.fill((0, 0, 0))
-    for star in stars:
-        star.dvig2(keys)
-        star.star1()
-    #pygame.time.delay(1000)
-    for i in pygame.event.get():
-        if i.type == pygame.QUIT:
-            exit()
-    #bull.snar()
-    #ship2.ship1()
-    #draw()
-    #keys = pygame.key.get_pressed()
-    #ship2.ship1()
-    ship2.dvig(keys)
-    x5=ship2.x+60
-    y5=ship2.y+60
-    da=True
-    if keys[pygame.K_SPACE]:
-        for pro in bulle:
-            da=ship2.proverka(pro.x1,pro.y1)
-            if da==False:
-                break
-        if da:
-            bulle.append(Bullet(x5,y5,height1,widht1,speed1,color_green))
+while game:
+    run3 = True
+    sound=screen.meny(sound,last_score,money,money_file)
+    while run3:
+        #draw()
+        neo = True
+        keys = pygame.key.get_pressed()
+        sc.fill((0, 0, 0))
+        for star in stars:
+            star.dvig2(keys)
+            star.star1()
+        #pygame.time.delay(1000)
+        for i in pygame.event.get():
+            if i.type == pygame.QUIT:
+                money_file.write(str(money))
+                money_file.close()
+                exit()
+        #bull.snar()
+        #ship2.ship1()
+        #draw()
+        #keys = pygame.key.get_pressed()
+        #ship2.ship1()
+        ship2.dvig(keys)
+        x5=ship2.x+60
+        y5=ship2.y+60
+        da=True
+        if keys[pygame.K_SPACE]:
+            for pro in bulle:
+                da=ship2.proverka(pro.x1,pro.y1)
+                if da==False:
+                    break
+            if da:
+                bulle.append(Bullet(x5,y5,height1,widht1,speed1,color_green))
 
-    #for al in range(2):
-        #angry.append(AngryAlien(color0,widht5,height5))
-    if len(angry)>0:
-        for a in angry:
-            a.dwig3(angry)
-            if a.y6>0:
-                vistrel(a,height1, widht1, speed1, color_red)
-            if len(a.angry_bullet)>0:
-                for bu in a.angry_bullet:
-                    bu.snar()
-                    bu.polet2()
-            a.spawn()
-            if a.y6<=0:
-                neo=False
-    if neo==True:
-        dobavka(angry)
-    if len(bulle)>0 and len(angry)>0:
-        for b in bulle:
-            for a1 in angry:
-                if(a1.x6 + 5 < b.x1 < a1.x6 + 75) and (a1.y6 < b.y1 < a1.y6 + 115) or (a1.x6 + 5 < b.x1 + 5 < a1.x6 + 75) and (a1.y6 < b.y1 + 40 < a1.y6 + 115):
-                    #print('popal')
-                    bulle.remove(b)
-                    if len(a1.angry_bullet)>0:
-                        for q2 in a1.angry_bullet:
-                            new_bullet.append(q2)
-                        angry.remove(a1)
-                    else:
-                        angry.remove(a1)
-    if len(new_bullet)>0:
-        for q3 in new_bullet:
-            if (ship2.x + 15 < q3.x1 < ship2.x + 115) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 15 < q3.x1 + 5 < ship2.x + 115) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
-                run3=False
-                break
-    if len(angry)>0:
-        for q4 in angry:
-            if len(q4.angry_bullet)>0:
-                for q3 in q4.angry_bullet:
-                    if (ship2.x + 15 < q3.x1 < ship2.x + 115) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 15 < q3.x1 + 5 < ship2.x + 115) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
-                        run3 = False
-                        break
-    if len(angry)>0:
-        for q3 in angry:
-            if (ship2.x + 5 < q3.x6 + 5 < ship2.x + 123) and (ship2.y + 30 < q3.y6 < ship2.y + 115) or (ship2.x + 5 < q3.x6 + 75 < ship2.x + 123) and (ship2.y + 30 < q3.y6 + 40 < ship2.y + 115):
-                run3 = False
-                break
-    if len(new_bullet)>0:
-        for q in new_bullet:
-            q.snar()
-            q.polet2()
-            if q.y1>500:
-                new_bullet.remove(q)
-    if len(bulle)>0:
-        for i in bulle:
-            i.snar()
-            i.polet()
-            if i.y1<=0:
-                del bulle[0]
-    ship2.ship1()
-    #keys,x4,y4=ship2.dvig(keys,x4,y4)
-    #bull.polet(keys,run)
-    #draw()
-    pygame.display.update()
-    #draw()
-    clock.tick(FPS)
-    #draw()
-    #pygame.display.update()
+        #for al in range(2):
+            #angry.append(AngryAlien(color0,widht5,height5))
+        if len(angry)>0:
+            for a in angry:
+                a.dwig3(angry)
+                if a.y6>-100:
+                    vistrel(a,height1, widht1, speed1, color_red)
+                if len(a.angry_bullet)>0:
+                    for bu in a.angry_bullet:
+                        bu.snar()
+                        bu.polet2()
+                a.spawn()
+                if a.y6<=0:
+                    neo=False
+        if neo==True:
+            dobavka(angry)
+        if len(bulle)>0 and len(angry)>0:
+            for b in bulle:
+                for a1 in angry:
+                    if(a1.x6 + 5 < b.x1 < a1.x6 + 75) and (a1.y6 < b.y1 < a1.y6 + 115) or (a1.x6 + 5 < b.x1 + 5 < a1.x6 + 75) and (a1.y6 < b.y1 + 40 < a1.y6 + 115):
+                        #print('popal')
+                        bulle.remove(b)
+                        score+=1
+                        #print(score)
+                        if len(a1.angry_bullet)>0:
+                            for q2 in a1.angry_bullet:
+                                new_bullet.append(q2)
+                            angry.remove(a1)
+                        else:
+                            angry.remove(a1)
+        if len(new_bullet)>0:
+            for q3 in new_bullet:
+                if (ship2.x + 15 < q3.x1 < ship2.x + 115) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 15 < q3.x1 + 5 < ship2.x + 115) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
+                    run3=False
+                    break
+        if len(angry)>0:
+            for q4 in angry:
+                if len(q4.angry_bullet)>0:
+                    for q3 in q4.angry_bullet:
+                        if (ship2.x + 15 < q3.x1 < ship2.x + 115) and (ship2.y + 30 < q3.y1 < ship2.y + 115) or (ship2.x + 15 < q3.x1 + 5 < ship2.x + 115) and (ship2.y + 30 < q3.y1 + 40 < ship2.y + 115):
+                            run3 = False
+                            break
+        if len(angry)>0:
+            for q3 in angry:
+                if (ship2.x + 5 < q3.x6 + 5 < ship2.x + 123) and (ship2.y + 30 < q3.y6 < ship2.y + 115) or (ship2.x + 5 < q3.x6 + 75 < ship2.x + 123) and (ship2.y + 30 < q3.y6 + 40 < ship2.y + 115):
+                    run3 = False
+                    break
+        if len(new_bullet)>0:
+            for q in new_bullet:
+                q.snar()
+                q.polet2()
+                if q.y1>500:
+                    new_bullet.remove(q)
+        if len(bulle)>0:
+            for i in bulle:
+                i.snar()
+                i.polet()
+                if i.y1<=0:
+                    del bulle[0]
+        ship2.ship1()
+        #keys,x4,y4=ship2.dvig(keys,x4,y4)
+        #bull.polet(keys,run)
+        #draw()
+        pygame.display.update()
+        #draw()
+        clock.tick(FPS)
+    angry.clear()
+    new_bullet.clear()
+    bulle.clear()
+    ship2.x=230
+    ship2.y=370
+    last_score = score
+    money=int(last_score/2+money)
+    score=0
 
 
