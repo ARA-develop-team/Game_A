@@ -16,6 +16,13 @@ def meny(sound,score,money,money_file):
     bg2=pygame.image.load('volum2.png')
     volum_on = pygame.transform.scale(bg, (40, 40))
     volum_off = pygame.transform.scale(bg2, (40, 40))
+    music_play=True
+    pygame.mixer.music.load('music3.mp3')
+    pygame.mixer.music.play(-1)
+    if music_play:
+        pygame.mixer.music.unpause()
+    else:
+        pygame.mixer.music.pause()
     if sound:
         music_play = True
         status_volum=volum_on
@@ -34,7 +41,7 @@ def meny(sound,score,money,money_file):
     sc=pygame.display.set_mode((screen_x, screen_y))
     my_fond=pygame.font.SysFont('monospace',20)
     #bg=pygame.image.load('screen1.jpg')
-    #im_new=pygame.transform.scale(bg, (screen_x, screen_y))
+    #m_new=pygame.transform.scale(bg, (screen_x, screen_y))
     clock = pygame.time.Clock()
     class Button:
         def __init__(self,x,y,widht,height,text,color,index):
@@ -98,6 +105,7 @@ def meny(sound,score,money,money_file):
                         if t.press(x3,y3):
                             if t.index==0:#start
                                 run=False
+                                #music_play=False
                                 return music_play
                             if t.index==3:
                                 if music_play==True:

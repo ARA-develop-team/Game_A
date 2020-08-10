@@ -28,6 +28,7 @@ money=0
 money_file=open('game.txt','r')
 money=int(money_file.read())
 money_file=open('game.txt','w')
+per=1
 left=False
 right=True
 mo=False
@@ -203,8 +204,9 @@ def vistrel(korabel,height1, widht1, speed1, color_red):
 ship2=Ship(x,y,widht,height,speed)
 #ship2.ship1()
 pygame.display.update()
-pygame.mixer.music.load('music1.mp3')
+#music_play=True
 if sound:
+    pygame.mixer.music.load('music3.mp3')
     pygame.mixer.music.play(-1)
 #for al in range(2):
     #angry.append(AngryAlien(color0, widht5, height5))
@@ -213,11 +215,19 @@ for st in range(200):
 while game:
     run3 = True
     sound=screen.meny(sound,last_score,money,money_file)
+    music_play=False
+    if music_play == True:
+        pygame.mixer.music.unpause()
+    else:
+        pygame.mixer.music.pause()
+        pygame.mixer.music.load('music4.mp3')
+        pygame.mixer.music.play(-1)
     while run3:
         #draw()
         neo = True
         keys = pygame.key.get_pressed()
         sc.fill((0, 0, 0))
+        #draw()
         for star in stars:
             star.dvig2(keys)
             star.star1()
@@ -318,5 +328,6 @@ while game:
     last_score = score
     money=int(last_score/2+money)
     score=0
+    pygame.mixer.music.pause()
 
 
