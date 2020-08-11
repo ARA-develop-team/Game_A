@@ -1,8 +1,28 @@
 import pygame
 from textwrap import fill
-import time
-import math
 import random
+
+
+class Button():
+    def __init__(self, x, y, widht, height, text, color, index):
+        self.x = x
+        self.y = y
+        self.widht = widht
+        self.height = height
+        self.text = text
+        self.color = color
+        self.index = index
+
+    def draw1(self, sc, my_fond):
+        pygame.draw.rect(sc, self.color, (self.x, self.y, self.widht, self.height))
+        string = my_fond.render(self.text, 1, (255, 255, 255))
+        sc.blit(string, (self.x, self.y))
+
+    def press(self, px, py):
+        if self.x < px < self.x + self.widht and self.y < py < self.y + self.height:
+            return True
+        else:
+            return False
 def meny(sound,score,money,money_file):
     FPS = 60
     screen_x=500
@@ -43,24 +63,7 @@ def meny(sound,score,money,money_file):
     #bg=pygame.image.load('screen1.jpg')
     #m_new=pygame.transform.scale(bg, (screen_x, screen_y))
     clock = pygame.time.Clock()
-    class Button:
-        def __init__(self,x,y,widht,height,text,color,index):
-            self.x=x
-            self.y=y
-            self.widht=widht
-            self.height=height
-            self.text=text
-            self.color=color
-            self.index=index
-        def draw1(self,sc,my_fond):
-            pygame.draw.rect(sc,self.color,(self.x,self.y,self.widht,self.height))
-            string=my_fond.render(self.text,1,(255,255,255))
-            sc.blit(string,(self.x,self.y))
-        def press(self,px,py):
-            if self.x<px<self.x+self.widht and self.y<py<self.y+self.height:
-                return True
-            else:
-                return False
+
     #def draw():
         #sc.blit(im_new, (0,0))
         #pygame.display.update()
@@ -107,6 +110,9 @@ def meny(sound,score,money,money_file):
                                 run=False
                                 #music_play=False
                                 return music_play
+                            if t.index==1:
+                                import shop
+                                shop.shop1()
                             if t.index==3:
                                 if music_play==True:
                                     status_volum=volum_off
