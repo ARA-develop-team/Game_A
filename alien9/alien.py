@@ -203,6 +203,7 @@ def vistrel(korabel,height1, widht1, speed1, color_red):
 #bull=Bullet(x1,y1,height1,widht1,speed1)
 ship2=Ship(x,y,widht,height,speed)
 #ship2.ship1()
+mu=True
 pygame.display.update()
 #music_play=True
 if sound:
@@ -214,7 +215,7 @@ for st in range(200):
     stars.append(Star(color,r))
 while game:
     run3 = True
-    sound=screen.meny(sound,last_score,money,money_file)
+    sound=screen.meny(sound,last_score,money,money_file,)
     music_play=False
     if music_play == True:
         pygame.mixer.music.unpause()

@@ -23,7 +23,9 @@ class Button():
             return True
         else:
             return False
-def meny(sound,score,money,money_file):
+
+
+def meny(sound,score,money,money_file,):
     FPS = 60
     screen_x=500
     screen_y=500
@@ -32,11 +34,14 @@ def meny(sound,score,money,money_file):
     button_list=[]
     widht=150
     height=50
+    a=400
+    b=25
     bg=pygame.image.load('volum1.png')
     bg2=pygame.image.load('volum2.png')
     volum_on = pygame.transform.scale(bg, (40, 40))
     volum_off = pygame.transform.scale(bg2, (40, 40))
     music_play=True
+    sound=True
     pygame.mixer.music.load('music3.mp3')
     pygame.mixer.music.play(-1)
     if music_play:
@@ -60,8 +65,11 @@ def meny(sound,score,money,money_file):
     pygame.init()
     sc=pygame.display.set_mode((screen_x, screen_y))
     my_fond=pygame.font.SysFont('monospace',20)
+    mo=pygame.image.load('moneta1.png')
+    im = pygame.transform.scale(mo, (20,20))
     #bg=pygame.image.load('screen1.jpg')
-    #m_new=pygame.transform.scale(bg, (screen_x, screen_y))
+    #im_new=pygame.transform.scale(bg, (screen_x, screen_y))
+    #im.set_colorkey((255, 255, 255))
     clock = pygame.time.Clock()
 
     #def draw():
@@ -87,13 +95,16 @@ def meny(sound,score,money,money_file):
         x=((screen_x/20)*19)-widht
         y=(screen_y/20)
         list.append(Button(x, y, widht, height, text2[0], color,len(list)))
+        #sc.blit(im,[x,y])
 
 
 
     button_pos(screen_x,screen_y,widht,height,button_list,color,score)
+    #sc.blit(im, [400, 20])
     pygame.display.update()
     while run:
         sc.fill((105, 105, 105))
+        #sc.blit(im, [400,20])
         #draw()
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
@@ -112,21 +123,32 @@ def meny(sound,score,money,money_file):
                                 return music_play
                             if t.index==1:
                                 import shop
-                                shop.shop1()
+                                shop.shop1(money)
                             if t.index==3:
                                 if music_play==True:
                                     status_volum=volum_off
                                     music_play=False
+                                    #mu=False
+                                    #return mu,status_volum,music_play
                                     #print(music_play)
                                 else:
                                     status_volum=volum_on
                                     music_play=True
+                                    #mu=True
+                                    #return mu,status_volum,music_play
                                     #print(music_play)
                                 music(music_play)
+        #sc.blit(im, [400, 20])
 
         for button in button_list:
             button.draw1(sc,my_fond)
             if button.index==3:
                 sc.blit(status_volum,[button.x,button.y])
+        if money<99:
+            sc.blit(im,[a,b])
+        elif money>100:
+            sc.blit(im, [a+10, b])
+        elif money>1000:
+            sc.blit(im, [a + 10, b])
         clock.tick(FPS)
         pygame.display.update()

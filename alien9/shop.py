@@ -1,6 +1,6 @@
 import pygame
 from screen import Button
-def shop1():
+def shop1(money):
     pygame.init()
     FPS = 60
     run = True
@@ -13,6 +13,9 @@ def shop1():
     stand = pygame.image.load('ship3.png')
     stand2 = pygame.image.load('ship2.jpg')
     stand5 = pygame.image.load('pou.png')
+    #mo = pygame.image.load('moneta1.png')
+    #im = pygame.transform.scale(mo, (20, 20))
+    stand6 = pygame.transform.scale(stand5, (250, 250))
     stand3 = pygame.transform.scale(stand2, (250, 250))
     stand4 = pygame.transform.scale(stand, (250, 250))
     right = pygame.transform.scale(st, (50, 50))
@@ -22,10 +25,10 @@ def shop1():
     sc=pygame.display.set_mode((screen_x, screen_y))
     clock = pygame.time.Clock()
     butt=[]
-    ship=[stand4,stand3,stand5]
-    def butt_pos(screen_x,screen_y,butt):
+    ship=[stand4,stand3,stand6]
+    def butt_pos(screen_x,screen_y,butt,money):
         extra = 10
-        text=['Buy','','']
+        text=['Buy','','',str(money)]
         color=(0, 128, 0)
         for i in range(3):
             if i==2:
@@ -43,7 +46,7 @@ def shop1():
         y=screen_y/20
         widht=180
         height=250
-        butt.append(Button(x, y, widht, height, text[1], color, len(butt)))
+        butt.append(Button(x, y, widht, height, text[3], color, len(butt)))
         widht=250
         height=250
         x=screen_x-(screen_x/20+widht)
@@ -65,9 +68,14 @@ def shop1():
 
 
 
+    def money_ckeck(money,price):
+        if money>=price:
+            return True
+        else:
+            return False
 
     pygame.display.update()
-    butt_pos(screen_x,screen_y,butt)
+    butt_pos(screen_x,screen_y,butt,money)
 
     while run:
         sc.fill((169, 169, 169))
@@ -80,6 +88,9 @@ def shop1():
                     y3 = i.pos[1]
                     for button in butt:
                         if button.press(x3,y3):
+                            if button.index==0:
+                                #money_ckeck(money,price)
+                                pass
                             if button.index==1:
                                 move=1
                                 possition=click(move,ship,possition)
@@ -95,8 +106,6 @@ def shop1():
                 sc.blit(left,[button.x,button.y])
             elif button.index==4:
                 sc.blit(ship[possition],[button.x,button.y])
-
-
 
         clock.tick(FPS)
         pygame.display.update()
