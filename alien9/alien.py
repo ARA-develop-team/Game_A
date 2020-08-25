@@ -26,8 +26,13 @@ score=0
 last_score=score
 money=0
 money_file=open('game.txt','r')
-money=int(money_file.read())
-money_file=open('game.txt','w')
+#money=int(money_file.read())
+money=money_file.read()
+if len(money)<=0:
+    money=0
+else:
+    money=int(money)
+
 per=1
 left=False
 right=True
@@ -235,6 +240,7 @@ while game:
         #pygame.time.delay(1000)
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
+                money_file = open('game.txt', 'w')
                 money_file.write(str(money))
                 money_file.close()
                 exit()

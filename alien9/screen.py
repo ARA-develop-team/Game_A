@@ -108,6 +108,7 @@ def meny(sound,score,money,money_file,):
         #draw()
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
+                money_file = open('game.txt', 'w')
                 money_file.write(str(money))
                 money_file.close()
                 exit()
@@ -123,7 +124,7 @@ def meny(sound,score,money,money_file,):
                                 return music_play
                             if t.index==1:
                                 import shop
-                                shop.shop1(money)
+                                money=shop.shop1(money)
                             if t.index==3:
                                 if music_play==True:
                                     status_volum=volum_off
@@ -144,11 +145,13 @@ def meny(sound,score,money,money_file,):
             button.draw1(sc,my_fond)
             if button.index==3:
                 sc.blit(status_volum,[button.x,button.y])
-        if money<99:
+            if button.index==4:
+                button.text=str(money)
+        if money<=99:
             sc.blit(im,[a,b])
-        elif money>100:
+        elif money>=100:
             sc.blit(im, [a+10, b])
-        elif money>1000:
+        elif money>=1000:
             sc.blit(im, [a + 10, b])
         clock.tick(FPS)
         pygame.display.update()
