@@ -1,20 +1,17 @@
 import pygame
 from screen import Button
-def shop1(money):
+def shop1(money,ship_list,my_ship):
     pygame.init()
     FPS = 60
     run = True
     screen_x=500
     screen_y=500
     possition=0
+    ex=1
     #price=100
     my_fond = pygame.font.SysFont('monospace', 20)
     st=pygame.image.load('right.png')
     st1= pygame.image.load('left.png')
-    stand = pygame.image.load('ship3.png')
-    stand2 = pygame.image.load('ship2.jpg')
-    stand5 = pygame.image.load('pou.png')
-
     def info():
         done=False
         c=0
@@ -40,9 +37,8 @@ def shop1(money):
         #price_list[i]=int(price_list[i])
     #mo = pygame.image.load('moneta1.png')
     #im = pygame.transform.scale(mo, (20, 20))
-    stand6 = pygame.transform.scale(stand5, (250, 250))
-    stand3 = pygame.transform.scale(stand2, (250, 250))
-    stand4 = pygame.transform.scale(stand, (250, 250))
+    #stand6 = pygame.transform.scale(stand5, (250, 250))
+    #stand3 = pygame.transform.scale(stand2, (250, 250))
     right = pygame.transform.scale(st, (50, 50))
     left = pygame.transform.scale(st1, (50, 50))
     right.set_colorkey((255, 255, 255))
@@ -51,7 +47,7 @@ def shop1(money):
     clock = pygame.time.Clock()
     #price_list=[0,100,200]
     butt=[]
-    ship=[stand4,stand3,stand6]
+    #ship=[stand4,stand3,stand6]
     def butt_pos(screen_x,screen_y,butt,money):
         extra = 10
         text=['','','',str(money)]
@@ -105,6 +101,11 @@ def shop1(money):
 
     while run:
         sc.fill((169, 169, 169))
+        if ex!=possition:
+            load = pygame.image.load(ship_list[possition])
+            stand = pygame.transform.scale(load, (250, 250))
+        ex=possition
+        cesh=True
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
                 #run=False
@@ -112,17 +113,16 @@ def shop1(money):
                 for price in price_list:
                     price_file.write(str(price)+',')
                 price_file.close()
-                return money
+                return money,my_ship
             if i.type == pygame.MOUSEMOTION:
                 x3 = i.pos[0]
                 y3 = i.pos[1]
                 for button in butt:
-                    button.color = (0, 128, 0)
                     if button.press(x3, y3):
                         if button.index==0:
                             ckeck = money_ckeck(money, price_list[possition])
                             if not ckeck:
-                                button.color=(255,0,0)
+                                cesh=False
             if i.type == pygame.MOUSEBUTTONUP:
                 if i.button == 1:
                     x3 = i.pos[0]
@@ -130,22 +130,31 @@ def shop1(money):
                     for button in butt:
                         if button.press(x3,y3):
                             if button.index==0:
-                                ckeck=money_ckeck(money,price_list[possition])
-                                if ckeck:
-                                    money-=price_list[possition]
-                                    price_list[possition]=0
+                                if price_list[possition]==0:
+                                    my_ship=ship_list[possition]
                                 else:
-                                    print('no money')
+                                    ckeck=money_ckeck(money,price_list[possition])
+                                    if ckeck:
+                                        money-=price_list[possition]
+                                        price_list[possition]=0
+                                    else:
+                                        print('no money')
                             if button.index==1:
                                 move=1
-                                possition=click(move,ship,possition,)
+                                possition=click(move,ship_list,possition,)
                             if button.index==2:
                                 move = -1
-                                possition = click(move, ship, possition,)
+                                possition = click(move, ship_list, possition,)
         for button in butt:
             if button.index!=1 and button.index!=2:
                 button.draw1(sc,my_fond)
             if button.index==0:
+                if my_ship==ship_list[possition]:
+                    button.color = [255, 215, 0]
+                elif cesh==False:
+                    button.color = (255, 0, 0)
+                else:
+                    button.color = (0, 128, 0)
                 if price_list[possition]==0:
                     button.text = 'select'
                 else:
@@ -157,7 +166,7 @@ def shop1(money):
             elif button.index == 3:
                 button.text = str(money)
             elif button.index==4:
-                sc.blit(ship[possition],[button.x,button.y])
+                sc.blit(stand,[button.x,button.y])
 
 
         clock.tick(FPS)

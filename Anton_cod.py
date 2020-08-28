@@ -1,4 +1,6 @@
 import random
+import visual
+
 
 
 class CPlayer:
@@ -238,6 +240,10 @@ while game:
     """checking possible turns"""
 
     for one in player:
+        for i in pygame.event.get():
+            if i.type == pygame.QUIT:
+                exit()
+
         print("***")
         print(one.name, " стартовая позиция ", "(", one.startPosition, ")")
         cube = random.randint(1, 6)
@@ -262,7 +268,6 @@ while game:
                 break
             else:
                 cube = random.randint(1, 6)
-
                 print("кубик:", cube)
         one.step(board, cube, player)
         # проверка домика игрока
