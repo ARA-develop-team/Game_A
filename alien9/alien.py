@@ -1,6 +1,8 @@
 import pygame
 import random
 import screen
+import logo
+
 
 pygame.init()
 
@@ -16,7 +18,8 @@ height=20
 speed=5
 FPS=60
 run3=True
-stand=pygame.image.load('ship3.png')
+ship_list=['ship3.png','ship2.jpg','pou.png']
+last_ship=ship_list[0]
 im=pygame.image.load('blue2.png')
 im_new=pygame.transform.scale(im, (80, 120))
 im_new.set_colorkey((255, 255, 255))
@@ -216,12 +219,15 @@ if sound:
     pygame.mixer.music.play(-1)
 #for al in range(2):
     #angry.append(AngryAlien(color0, widht5, height5))
+logo.logo1()
 for st in range(200):
     stars.append(Star(color,r))
 while game:
     run3 = True
-    sound=screen.meny(sound,last_score,money,money_file,)
+    sound,my_ship=screen.meny(sound,last_score,money,money_file,ship_list,last_ship)
     music_play=False
+    load = pygame.image.load(my_ship)
+    stand = pygame.transform.scale(load, (128, 128))
     if music_play == True:
         pygame.mixer.music.unpause()
     else:
@@ -327,6 +333,7 @@ while game:
         pygame.display.update()
         #draw()
         clock.tick(FPS)
+    last_ship=my_ship
     angry.clear()
     new_bullet.clear()
     bulle.clear()

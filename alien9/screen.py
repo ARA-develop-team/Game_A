@@ -25,7 +25,7 @@ class Button():
             return False
 
 
-def meny(sound,score,money,money_file,):
+def meny(sound,score,money,money_file,ship_list,my_ship):
     FPS = 60
     screen_x=500
     screen_y=500
@@ -121,10 +121,10 @@ def meny(sound,score,money,money_file,):
                             if t.index==0:#start
                                 run=False
                                 #music_play=False
-                                return music_play
+                                return music_play,my_ship
                             if t.index==1:
                                 import shop
-                                money=shop.shop1(money)
+                                money,my_ship=shop.shop1(money,ship_list,my_ship)
                             if t.index==3:
                                 if music_play==True:
                                     status_volum=volum_off
