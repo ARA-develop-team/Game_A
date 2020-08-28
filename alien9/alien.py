@@ -207,7 +207,7 @@ def vistrel(korabel,height1, widht1, speed1, color_red):
     else:
         korabel.angry_bullet.append(Bullet(korabel.x6+40, korabel.y6+40, height1, widht1, speed1, color_red))
 
-
+logo.logo1()
 #bull=Bullet(x1,y1,height1,widht1,speed1)
 ship2=Ship(x,y,widht,height,speed)
 #ship2.ship1()
@@ -219,7 +219,6 @@ if sound:
     pygame.mixer.music.play(-1)
 #for al in range(2):
     #angry.append(AngryAlien(color0, widht5, height5))
-logo.logo1()
 for st in range(200):
     stars.append(Star(color,r))
 while game:
