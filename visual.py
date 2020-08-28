@@ -7,13 +7,15 @@ FPS = 60
 screen_x = 800
 screen_y = 800
 pygame.init()
-pygame.display.set_mode((screen_x, screen_y))
+screen=pygame.display.set_mode((screen_x, screen_y))
 clock = pygame.time.Clock()
 
 # если надо до цикла отобразить объекты на экране
 pygame.display.update()
 
-def boardVisual():
+def boardVisual(board):
+    for i in board:
+        pygame.draw.rect(screen, (211, 211, 211), (i.x, i.y, i.width, i.width))
 
 
     # цикл обработки событий

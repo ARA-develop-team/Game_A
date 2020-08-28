@@ -1,6 +1,7 @@
 import random
 import visual
-
+import pygame
+from visual import boardVisual
 
 
 class CPlayer:
@@ -212,27 +213,27 @@ board = []
 startPoint = [0, 7, 14, 21]
 screen_x = 800
 screen_y = 800
-width = 40
-empty = 5
+width = 70
+empty = 10
 createPlayers = True
 game = True
-x = (screen_x / 2) - (4 * width + 3 * empty - empty // 2)
-y = (screen_y / 2) - (4 * width + 3 * empty - empty // 2)
+x = (screen_x / 2) - width -(4 * width + 3 * empty - empty // 2)
+y= (screen_y / 2) - (4 * width + 3 * empty - empty // 2)
 
 """game start"""
 print('game start')
 
 for c in range(0, 8):
-    x = x + ((width + empty) * c)
+    x = x + (width + empty)
     board.append(square(x, y, width))
 for c in range(0, 7):
-    y = y + ((width + empty)*(c + 1))
+    y = y + (width + empty)
     board.append(square(x, y, width))
 for c in range(0, 7):
-    x = x - ((width + empty)*(c + 1))
+    x = x - (width + empty)
     board.append(square(x, y, width))
 for c in range(0, 7):
-    y = y - ((width + empty)*(c + 1))
+    y = y - (width + empty)
     board.append(square(x, y, width))
 
 
@@ -263,7 +264,7 @@ while game:
         for i in pygame.event.get():
             if i.type == pygame.QUIT:
                 exit()
-
+        boardVisual(board)
         print("***")
         print(one.name, " стартовая позиция ", "(", one.startPosition, ")")
         cube = random.randint(1, 6)
