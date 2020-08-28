@@ -8,7 +8,7 @@ def logo1():
     pygame.init()
     sc=pygame.display.set_mode((500, 500))
     clock = pygame.time.Clock()
-    im=pygame.image.load('ado.png')
+    im=pygame.image.load('ado1.png')
     im_new=pygame.transform.scale(im, (500, 500))
     def draw():
         sc.fill((255, 255, 255))
