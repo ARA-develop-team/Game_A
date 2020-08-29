@@ -1,4 +1,6 @@
 import random
+import pygame
+from visual import boardVisual
 
 
 class CPlayer:
@@ -138,11 +140,14 @@ class CPlayer:
 class square:
     """for playSpace"""
 
-    def __init__(self):
+    def __init__(self, x, y, width):
         self.free = True
         self.invader = 100
         self.newBorn = False
         self.active = False
+        self.x = x
+        self.y = y
+        self.width = width
 
     def occupy(self, PInvader, PPlayers):
         if self.free:
@@ -205,14 +210,31 @@ num = 1
 player = []
 board = []
 startPoint = [0, 7, 14, 21]
-
+screen_x = 800
+screen_y = 800
+width = 70
+empty = 10
 createPlayers = True
 game = True
+x = (screen_x / 2) - width -(4 * width + 3 * empty - empty // 2)
+y= (screen_y / 2) - (4 * width + 3 * empty - empty // 2)
 
 """game start"""
 print('game start')
-for x in range(0, 28):
-    board.append(square())
+
+for c in range(0, 8):
+    x = x + (width + empty)
+    board.append(square(x, y, width))
+for c in range(0, 7):
+    y = y + (width + empty)
+    board.append(square(x, y, width))
+for c in range(0, 7):
+    x = x - (width + empty)
+    board.append(square(x, y, width))
+for c in range(0, 7):
+    y = y - (width + empty)
+    board.append(square(x, y, width))
+
 
 while createPlayers:
     if num == 0:
@@ -238,6 +260,10 @@ while game:
     """checking possible turns"""
 
     for one in player:
+        for i in pygame.event.get():
+            if i.type == pygame.QUIT:
+                exit()
+        boardVisual(board)
         print("***")
         print(one.name, " стартовая позиция ", "(", one.startPosition, ")")
         cube = random.randint(1, 6)
