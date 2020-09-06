@@ -16,11 +16,16 @@ class Cube:
     def draw(self, surface):
         surface.blit(self.list_img[self.number_current_img], (self.x, self.y))
 
-    def dice_roll(self, pos):
+    def collision_click(self, pos):
         if self.x < pos[0] < self.x + self.wight and self.y < pos[1] < self.y + self.wight:
-            self.number_current_img = random.randint(0, 5)
-            return self.number_current_img + 1
+            return True
 
+    def set_random_img(self):
+        self.number_current_img = random.randint(0, 5)
+        return self.number_current_img + 1
+
+    def set_img(self, number):
+        self.number_current_img = number
 
 # здесь происходит инициация, создание объектов и др.
 screen_x = 800
@@ -60,6 +65,7 @@ def boardVisual(board):
     # обновление экрана
     pygame.display.update()
 
+
 #
 # while True:
 #     for i in pygame.event.get():
@@ -71,3 +77,4 @@ def boardVisual(board):
 #     screen.fill(green)
 #     cube.draw(screen)
 #     pygame.display.update()
+
