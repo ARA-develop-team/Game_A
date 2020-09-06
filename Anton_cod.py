@@ -1,7 +1,8 @@
 import random
 import pygame
 from visual import boardVisual
-
+from visual import Cube
+from visual import screen
 
 class CPlayer:
     """for creating players"""
@@ -181,29 +182,6 @@ class square:
             self.active = False
 
 
-class Cube:
-    def __init__(self, x, y, wight, list_img, number_current_img=random.randint(0, 5)):
-        self.x = x
-        self.y = y
-        self.wight = wight
-        self.list_img = list_img
-        self.number_current_img = number_current_img
-
-    def draw(self, surface):
-        surface.blit(self.list_img[self.number_current_img], (self.x, self.y))
-
-    def collision_click(self, pos):
-        if self.x < pos[0] < self.x + self.wight and self.y < pos[1] < self.y + self.wight:
-            return True
-
-    def set_random_img(self):
-        self.number_current_img = random.randint(0, 5)
-        return self.number_current_img + 1
-
-    def set_img(self, number):
-        self.number_current_img = number
-
-
 def findActive(desk, PPlayer, PCube):
     for field in desk:
         if field.invader == PPlayer.startPosition:
@@ -324,12 +302,12 @@ list_load_img = []
 for img in list_img:
     list_load_img.append(pygame.image.load(img))
 
-cube = Cube(100, 100, 114, list_load_img)
-
+v_cube = Cube(300, 300, 114, list_load_img)
 while game:
     for one in player:
         cube = 6
         while cube == 6:
+            v_cube.draw(screen)
             boardVisual(board)
 
 
