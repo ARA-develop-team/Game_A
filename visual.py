@@ -27,11 +27,12 @@ class Cube:
     def set_img(self, number):
         self.number_current_img = number
 
+
 # здесь происходит инициация, создание объектов и др.
 screen_x = 800
 screen_y = 800
 pygame.init()
-screen=pygame.display.set_mode((screen_x, screen_y))
+screen = pygame.display.set_mode((screen_x, screen_y))
 clock = pygame.time.Clock()
 green = 0, 100, 0
 my_font = pygame.font.SysFont('Agency FB', 100)
@@ -40,11 +41,20 @@ my_font = pygame.font.SysFont('Agency FB', 100)
 pygame.display.update()
 
 
-
-def boardVisual(board):
+def boardVisual(board, color_list):
     for i in board:
         pygame.draw.rect(screen, (211, 211, 211), (i.x, i.y, i.width, i.width))
-
+        if not i.free:
+            if i.invader == 0:
+                color = 0
+            elif i.invader == 7:
+                color = 1
+            elif i.invader == 14:
+                color = 2
+            elif i.invader == 21:
+                color = 3
+            pygame.draw.circle(screen, color_list[color], (int((i.width / 2) + i.x), int((i.width / 2) + i.y)),
+                               int(i.width/2 - 10), int(i.width/2 - 10))
 
     # цикл обработки событий
     for i in pygame.event.get():
@@ -58,7 +68,6 @@ def boardVisual(board):
     # обновление экрана
     pygame.display.update()
 
-
 #
 # while True:
 #     for i in pygame.event.get():
@@ -70,4 +79,3 @@ def boardVisual(board):
 #     screen.fill(green)
 #     cube.draw(screen)
 #     pygame.display.update()
-

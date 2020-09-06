@@ -217,6 +217,7 @@ width = 70
 empty = 10
 createPlayers = True
 game = True
+color_list = [(0,0,0), (255,0,0), (0,255,0), (0,0,250)]
 x = (screen_x / 2) - width -(4 * width + 3 * empty - empty // 2)
 y= (screen_y / 2) - (4 * width + 3 * empty - empty // 2)
 
@@ -319,7 +320,7 @@ while game:
                             cube = v_cube.set_random_img()
             v_cube.draw(screen)
 
-            boardVisual(board)
+            boardVisual(board, color_list)
             if cube_activate:
                 print(one.startPosition, cube)
                 if cube == 6:
