@@ -300,6 +300,6 @@ while game:
     for one in player:
         cube = 6
         while cube == 6:
-            pass
+            boardVisual(board)
 
 
