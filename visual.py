@@ -39,14 +39,7 @@ my_font = pygame.font.SysFont('Agency FB', 100)
 # если надо до цикла отобразить объекты на экране
 pygame.display.update()
 
-list_img = ['gran1.png', 'gran2.png', 'gran3.png', 'gran4.png', 'gran5.png', 'gran6.png']
-list_load_img = []
-for img in list_img:
-    print(img)
-    list_load_img.append(pygame.image.load(img))
 
-print(list_load_img)
-cube = Cube(100, 100, 114, list_load_img)
 
 def boardVisual(board):
     for i in board:
