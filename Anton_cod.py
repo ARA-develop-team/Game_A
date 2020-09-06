@@ -297,7 +297,7 @@ while createPlayers:
 #             game = False
 #             break
 
-list_img = ['gran1.png', 'gran2.png', 'gran3.png', 'gran4.png', 'gran5.png', 'gran6.png']
+list_img = ['gran1.png', 'gran2.png', 'gran3.png', 'gran4.png', 'gran5.png', 'gran6.png', 'click_her.png']
 list_load_img = []
 for img in list_img:
     list_load_img.append(pygame.image.load(img))
@@ -306,7 +306,15 @@ v_cube = Cube(300, 300, 114, list_load_img)
 while game:
     for one in player:
         cube = 6
+        v_cube.set_img(6)
         while cube == 6:
+            for i in pygame.event.get():
+                if i.type == pygame.QUIT:
+                    exit()
+                if i.type == pygame.MOUSEBUTTONUP:
+                    if i.button == 1:
+                        if v_cube.collision_click(i.pos):
+                            cube = v_cube.set_random_img()
             v_cube.draw(screen)
             boardVisual(board)
 
