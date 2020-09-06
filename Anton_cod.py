@@ -306,45 +306,48 @@ v_cube = Cube(300, 300, 114, list_load_img)
 while game:
     for one in player:
         cube = 6
-        v_cube.set_img(6)
         while cube == 6:
-
+            cube_activate = False
+            v_cube.set_img(6)
             for i in pygame.event.get():
                 if i.type == pygame.QUIT:
                     exit()
                 if i.type == pygame.MOUSEBUTTONUP:
                     if i.button == 1:
                         if v_cube.collision_click(i.pos):
+                            cube_activate = True
                             cube = v_cube.set_random_img()
             v_cube.draw(screen)
 
             boardVisual(board)
+            if cube_activate:
+                print(one.startPosition, cube)
+                if cube == 6:
+                    if one.counter < 4 and board[one.startPosition].invader != one.startPosition:
+                        print("do you want to get new checker? _Y/N")
+                        ans = input()
+                        if ans == 'Y':
+                            one.getChecker()
+                            board[one.startPosition].occupy(one.startPosition, player)
+                            board[one.startPosition].newBorn = True
+                            # board[one.startPosition].active = True   удалить в рабочей версии
 
-            if cube == 6:
-                if one.counter < 4 and board[one.startPosition].invader != one.startPosition:
-                    print("do you want to get new checker? _Y/N")
-                    ans = input()
-                    if ans == 'Y':
-                        one.getChecker()
-                        board[one.startPosition].occupy(one.startPosition, player)
-                        board[one.startPosition].newBorn = True
-                        # board[one.startPosition].active = True   удалить в рабочей версии
-
+                        else:
+                            # поиск всех клеток которие могут ходить
+                            one.step(board, cube, player)
                     else:
                         # поиск всех клеток которие могут ходить
                         one.step(board, cube, player)
+                    if one.winner:
+                        print(one.name, "you win!!!")
+                        game = False
+                        break
                 else:
-                    # поиск всех клеток которие могут ходить
                     one.step(board, cube, player)
-                if one.winner:
-                    break
-                else:
-                    cube = random.randint(1, 6)
-                    print("кубик:", cube)
-            one.step(board, cube, player)
-            # проверка домика игрока
-            if one.winner:
-                print(one.name, "you win!!!")
-                game = False
-                break
-
+                    # проверка домика игрока
+                    if one.winner:
+                        print(one.name, "you win!!!")
+                        game = False
+                        break
+        if one.winner:
+            break
