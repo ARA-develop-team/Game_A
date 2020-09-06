@@ -256,44 +256,50 @@ while createPlayers:
         print("choose from 1 to 4")
         continue
 
+# while game:
+#     """checking possible turns"""
+#
+#     for one in player:
+#         for i in pygame.event.get():
+#             if i.type == pygame.QUIT:
+#                 exit()
+#         boardVisual(board)
+#         print("***")
+#         print(one.name, " стартовая позиция ", "(", one.startPosition, ")")
+#         cube = random.randint(1, 6)
+#         print("кубик:", cube)
+#         while cube == 6:
+#             if one.counter < 4 and board[one.startPosition].invader != one.startPosition:
+#                 print("do you want to get new checker? _Y/N")
+#                 ans = input()
+#                 if ans == 'Y':
+#                     one.getChecker()
+#                     board[one.startPosition].occupy(one.startPosition, player)
+#                     board[one.startPosition].newBorn = True
+#                     # board[one.startPosition].active = True   удалить в рабочей версии
+#
+#                 else:
+#                     # поиск всех клеток которие могут ходить
+#                     one.step(board, cube, player)
+#             else:
+#                 # поиск всех клеток которие могут ходить
+#                 one.step(board, cube, player)
+#             if one.winner:
+#                 break
+#             else:
+#                 cube = random.randint(1, 6)
+#                 print("кубик:", cube)
+#         one.step(board, cube, player)
+#         # проверка домика игрока
+#         if one.winner:
+#             print(one.name, "you win!!!")
+#             game = False
+#             break
+
 while game:
-    """checking possible turns"""
-
     for one in player:
-        for i in pygame.event.get():
-            if i.type == pygame.QUIT:
-                exit()
-        boardVisual(board)
-        print("***")
-        print(one.name, " стартовая позиция ", "(", one.startPosition, ")")
-        cube = random.randint(1, 6)
-        print("кубик:", cube)
+        cube = 6
         while cube == 6:
-            if one.counter < 4 and board[one.startPosition].invader != one.startPosition:
-                print("do you want to get new checker? _Y/N")
-                ans = input()
-                if ans == 'Y':
-                    one.getChecker()
-                    board[one.startPosition].occupy(one.startPosition, player)
-                    board[one.startPosition].newBorn = True
-                    # board[one.startPosition].active = True   удалить в рабочей версии
-
-                else:
-                    # поиск всех клеток которие могут ходить
-                    one.step(board, cube, player)
-            else:
-                # поиск всех клеток которие могут ходить
-                one.step(board, cube, player)
-            if one.winner:
-                break
-            else:
-                cube = random.randint(1, 6)
-                print("кубик:", cube)
-        one.step(board, cube, player)
-        # проверка домика игрока
-        if one.winner:
-            print(one.name, "you win!!!")
-            game = False
-            break
+            pass
 
 

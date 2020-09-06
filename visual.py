@@ -60,14 +60,14 @@ def boardVisual(board):
     # обновление экрана
     pygame.display.update()
 
-
-while True:
-    for i in pygame.event.get():
-        if i.type == pygame.QUIT:
-            exit()
-        if i.type == pygame.MOUSEBUTTONUP:
-            if i.button == 1:
-                cube.dice_roll(i.pos)
-    screen.fill(green)
-    cube.draw(screen)
-    pygame.display.update()
+#
+# while True:
+#     for i in pygame.event.get():
+#         if i.type == pygame.QUIT:
+#             exit()
+#         if i.type == pygame.MOUSEBUTTONUP:
+#             if i.button == 1:
+#                 cube.dice_roll(i.pos)
+#     screen.fill(green)
+#     cube.draw(screen)
+#     pygame.display.update()
