@@ -352,3 +352,69 @@ while game:
                         break
         if one.winner:
             break
+
+run = True
+active_player = 0
+cube_value = 0
+step_activate = False
+click_on_cube = False
+
+
+def change_player(player_list, act_player):
+    if act_player == len(player_list) - 1:
+        print('смена игрока на 1')
+        return 0
+    else:
+        print('смена игрока на ' + str(act_player + 1))
+        return act_player + 1
+# вторая версия цикла
+
+
+while run:
+    for i in pygame.event.get():
+        if i.type == pygame.QUIT:
+            exit()
+        if i.type == pygame.MOUSEBUTTONUP:
+            if i.button == 1:
+                if v_cube.collision_click(i.pos):
+                    step_activate = True
+                    cube_value = v_cube.set_random_img()
+                    print('куб нажат')
+
+    if step_activate:
+        if cube_value == 6:
+            if player[active_player].counter < 4 and board[player[active_player].startPosition].invader != player[active_player].startPosition:
+                print("do you want to get new checker? _Y/N")
+                ans = input()
+                if ans == 'Y':
+                    player[active_player].getChecker()
+                    board[player[active_player].startPosition].occupy(player[active_player].startPosition, player)
+                    board[player[active_player].startPosition].newBorn = True
+                    step_activate = False
+                    # board[one.startPosition].active = True   удалить в рабочей версии
+
+                else:
+                    # поиск всех клеток которие могут ходить
+                    print('поиск всех клеток которие могут ходить')
+                    player[active_player].step(board, cube_value, player)
+                    active_player = change_player(player, active_player)
+                    step_activate = False
+            else:
+                # поиск всех клеток которие могут ходить
+                print('поиск всех клеток которие могут ходить')
+                player[active_player].step(board, cube_value, player)
+                active_player = change_player(player, active_player)
+                step_activate = False
+        else:
+            print('поиск всех клеток которие могут ходить')
+            player[active_player].step(board, cube_value, player)
+            active_player = change_player(player, active_player)
+            step_activate = False
+        if player[active_player].winner:
+            print(player[active_player].name, "you win!!!")
+            run = False
+            break
+
+    v_cube.draw(screen)
+    boardVisual(board, color_list)
+    pygame.display.update()
